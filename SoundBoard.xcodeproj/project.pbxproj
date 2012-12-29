@@ -18,6 +18,7 @@
 		976CFDC5168FB43300D11FE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC4168FB43300D11FE8 /* Default-568h@2x.png */; };
 		976CFDC8168FB43300D11FE8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */; };
 		976CFDCB168FB43300D11FE8 /* SoundBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDCA168FB43300D11FE8 /* SoundBoardViewController.m */; };
+		976CFDD2168FB76A00D11FE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDD1168FB76A00D11FE8 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		976CFDC7168FB43300D11FE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		976CFDC9168FB43300D11FE8 /* SoundBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundBoardViewController.h; sourceTree = "<group>"; };
 		976CFDCA168FB43300D11FE8 /* SoundBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundBoardViewController.m; sourceTree = "<group>"; };
+		976CFDD1168FB76A00D11FE8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976CFDD2168FB76A00D11FE8 /* CoreData.framework in Frameworks */,
 				976CFDAF168FB43300D11FE8 /* UIKit.framework in Frameworks */,
 				976CFDB1168FB43300D11FE8 /* Foundation.framework in Frameworks */,
 				976CFDB3168FB43300D11FE8 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +59,7 @@
 		976CFD9F168FB43300D11FE8 = {
 			isa = PBXGroup;
 			children = (
+				976CFDD1168FB76A00D11FE8 /* CoreData.framework */,
 				976CFDB4168FB43300D11FE8 /* SoundBoard */,
 				976CFDAD168FB43300D11FE8 /* Frameworks */,
 				976CFDAB168FB43300D11FE8 /* Products */,
@@ -258,6 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBoard/SoundBoard-Prefix.pch";
 				INFOPLIST_FILE = "SoundBoard/SoundBoard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -269,6 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundBoard/SoundBoard-Prefix.pch";
 				INFOPLIST_FILE = "SoundBoard/SoundBoard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

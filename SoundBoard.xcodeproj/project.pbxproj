@@ -59,7 +59,6 @@
 		976CFD9F168FB43300D11FE8 = {
 			isa = PBXGroup;
 			children = (
-				976CFDD1168FB76A00D11FE8 /* CoreData.framework */,
 				976CFDB4168FB43300D11FE8 /* SoundBoard */,
 				976CFDAD168FB43300D11FE8 /* Frameworks */,
 				976CFDAB168FB43300D11FE8 /* Products */,
@@ -77,6 +76,7 @@
 		976CFDAD168FB43300D11FE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				976CFDD1168FB76A00D11FE8 /* CoreData.framework */,
 				976CFDAE168FB43300D11FE8 /* UIKit.framework */,
 				976CFDB0168FB43300D11FE8 /* Foundation.framework */,
 				976CFDB2168FB43300D11FE8 /* CoreGraphics.framework */,
@@ -299,6 +299,7 @@
 				976CFDD0168FB43300D11FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

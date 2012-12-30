@@ -19,6 +19,7 @@
 		976CFDC8168FB43300D11FE8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */; };
 		976CFDCB168FB43300D11FE8 /* SoundBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDCA168FB43300D11FE8 /* SoundBoardViewController.m */; };
 		976CFDD2168FB76A00D11FE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDD1168FB76A00D11FE8 /* CoreData.framework */; };
+		976CFDD9168FBBF400D11FE8 /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDD7168FBBF400D11FE8 /* SoundBoard.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		976CFDC9168FB43300D11FE8 /* SoundBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundBoardViewController.h; sourceTree = "<group>"; };
 		976CFDCA168FB43300D11FE8 /* SoundBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundBoardViewController.m; sourceTree = "<group>"; };
 		976CFDD1168FB76A00D11FE8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		976CFDD8168FBBF400D11FE8 /* SoundBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundBoard.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				976CFDBD168FB43300D11FE8 /* SoundBoardAppDelegate.h */,
+				976CFDD7168FBBF400D11FE8 /* SoundBoard.xcdatamodeld */,
 				976CFDBE168FB43300D11FE8 /* SoundBoardAppDelegate.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
 				976CFDC9168FB43300D11FE8 /* SoundBoardViewController.h */,
@@ -181,6 +184,7 @@
 				976CFDBB168FB43300D11FE8 /* main.m in Sources */,
 				976CFDBF168FB43300D11FE8 /* SoundBoardAppDelegate.m in Sources */,
 				976CFDCB168FB43300D11FE8 /* SoundBoardViewController.m in Sources */,
+				976CFDD9168FBBF400D11FE8 /* SoundBoard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		976CFDD7168FBBF400D11FE8 /* SoundBoard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				976CFDD8168FBBF400D11FE8 /* SoundBoard.xcdatamodel */,
+			);
+			currentVersion = 976CFDD8168FBBF400D11FE8 /* SoundBoard.xcdatamodel */;
+			path = SoundBoard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 976CFDA1168FB43300D11FE8 /* Project object */;
 }

@@ -10,4 +10,7 @@
 
 @interface SoundBoardGroup (Create)
 
++ (SoundBoardGroup *)groupWithName:(NSString *)name
+                inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

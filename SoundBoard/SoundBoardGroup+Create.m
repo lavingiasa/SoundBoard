@@ -10,4 +10,15 @@
 
 @implementation SoundBoardGroup (Create)
 
++ (SoundBoardGroup *)groupWithName:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    SoundBoardGroup * group = nil;
+    group = [NSEntityDescription insertNewObjectForEntityForName:@"SoundBoardGroup" inManagedObjectContext:context];
+    group.title = name;
+    
+    return group;
+}
+
+//This should work
+
 @end

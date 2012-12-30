@@ -14,6 +14,8 @@
 
 @implementation SoundBoardsTableViewController
 
+@synthesize soundButtonDatabase = _soundButtonDatabase;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,6 +34,79 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)setupFetchedResultsController
+{
+    //
+}
+
+- (void) fetchSoundDataIntoDocument: (UIManagedDocument *)document
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Sound fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *soundButtons = ;//array of NSDictionaries of sound buttons
+        [document.managedObjectContext performBlock:^{
+           for (NSDictionary *soundButtonInfo in soundButtons)
+           {
+               
+           }
+        }];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    });
+}
+
+- (void) useDocument
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self.soundButtonDatabase.fileURL path]])
+    {
+        [self.soundButtonDatabase saveToURL:self.soundButtonDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success)
+         {
+             [self setupFetchedResultsController];
+             [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+         }];
+        
+    }else if(self.soundButtonDatabase.documentState == UIDocumentStateClosed)
+    {
+        [self.soundButtonDatabase openWithCompletionHandler:^(BOOL success)
+        {
+            [self setupFetchedResultsController];
+            [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+        }];
+    }else if(self.soundButtonDatabase.documentState == UIDocumentStateNormal){
+        [self setupFetchedResultsController];        
+    }
+
+}
+
+- (void) setSoundButtonDatabase:(UIManagedDocument *)soundButtonDatabase
+{
+    if (_soundButtonDatabase != soundButtonDatabase)
+    {
+        _soundButtonDatabase = soundButtonDatabase;
+        [self useDocument];
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (!self.soundButtonDatabase)
+    {
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]lastObject];
+        url = [url URLByAppendingPathComponent:@"Default Sounds Database"];
+        self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
+    }
 }
 
 - (void)didReceiveMemoryWarning

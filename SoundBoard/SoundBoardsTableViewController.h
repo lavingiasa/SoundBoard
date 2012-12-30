@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
 
-@interface SoundBoardsTableViewController : UITableViewController
+@interface SoundBoardsTableViewController : CoreDataTableViewController
+
+@property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
 
 @end

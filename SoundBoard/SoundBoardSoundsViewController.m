@@ -23,15 +23,6 @@
     return self;
 }
 
-- (IBAction)playSound1:(id)sender
-{
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
-    AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    
-    theAudio.delegate = self;
-    [theAudio play];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

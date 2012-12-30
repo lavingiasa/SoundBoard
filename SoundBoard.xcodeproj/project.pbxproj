@@ -11,7 +11,6 @@
 		9717270F1690CE9B00CC4171 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9717270E1690CE9B00CC4171 /* AVFoundation.framework */; };
 		971727121690D07D00CC4171 /* SoundBoardSoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */; };
 		971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */; };
-		9717271F1690D2AD00CC4171 /* Rol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9717271E1690D2AD00CC4171 /* Rol.mp3 */; };
 		975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA1168FF98500708212 /* SoundButton+Effect.m */; };
 		975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA4168FFA1100708212 /* SoundBoardGroup+Create.m */; };
 		976CFDAF168FB43300D11FE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDAE168FB43300D11FE8 /* UIKit.framework */; };
@@ -40,7 +39,6 @@
 		971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardSoundsViewController.m; sourceTree = "<group>"; };
 		971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardAppDelegate.m; sourceTree = "<group>"; };
 		971727141690D0E600CC4171 /* SoundBoardAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardAppDelegate.h; sourceTree = "<group>"; };
-		9717271E1690D2AD00CC4171 /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rol.mp3; path = ../Rol.mp3; sourceTree = "<group>"; };
 		975DBBA0168FF98500708212 /* SoundButton+Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundButton+Effect.h"; sourceTree = "<group>"; };
 		975DBBA1168FF98500708212 /* SoundButton+Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SoundButton+Effect.m"; sourceTree = "<group>"; };
 		975DBBA3168FFA1100708212 /* SoundBoardGroup+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundBoardGroup+Create.h"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		976CFDB4168FB43300D11FE8 /* SoundBoard */ = {
 			isa = PBXGroup;
 			children = (
-				9717271E1690D2AD00CC4171 /* Rol.mp3 */,
 				9717270B1690CBD200CC4171 /* Sound.h */,
 				9717270C1690CBD200CC4171 /* Sound.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
@@ -226,7 +223,6 @@
 				976CFDC3168FB43300D11FE8 /* Default@2x.png in Resources */,
 				976CFDC5168FB43300D11FE8 /* Default-568h@2x.png in Resources */,
 				976CFDC8168FB43300D11FE8 /* MainStoryboard.storyboard in Resources */,
-				9717271F1690D2AD00CC4171 /* Rol.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

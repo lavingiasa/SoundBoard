@@ -21,6 +21,7 @@
 		976CFDD2168FB76A00D11FE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDD1168FB76A00D11FE8 /* CoreData.framework */; };
 		976CFDD9168FBBF400D11FE8 /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDD7168FBBF400D11FE8 /* SoundBoard.xcdatamodeld */; };
 		976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */; };
+		976CFDE4168FBDDE00D11FE8 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		976CFDD8168FBBF400D11FE8 /* SoundBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundBoard.xcdatamodel; sourceTree = "<group>"; };
 		976CFDDF168FBD0E00D11FE8 /* SoundBoardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardsTableViewController.h; sourceTree = "<group>"; };
 		976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardsTableViewController.m; sourceTree = "<group>"; };
+		976CFDE2168FBDDE00D11FE8 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */,
 				976CFDC9168FB43300D11FE8 /* SoundBoardViewController.h */,
 				976CFDCA168FB43300D11FE8 /* SoundBoardViewController.m */,
+				976CFDE2168FBDDE00D11FE8 /* CoreDataTableViewController.h */,
+				976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */,
 				976CFDB5168FB43300D11FE8 /* Supporting Files */,
 			);
 			path = SoundBoard;
@@ -191,6 +196,7 @@
 				976CFDCB168FB43300D11FE8 /* SoundBoardViewController.m in Sources */,
 				976CFDD9168FBBF400D11FE8 /* SoundBoard.xcdatamodeld in Sources */,
 				976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */,
+				976CFDE4168FBDDE00D11FE8 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

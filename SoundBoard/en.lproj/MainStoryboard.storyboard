@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-306" y="205"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sounds In Sound Board Table View Controller-->
         <scene sceneID="MF0-Jc-GLI">
             <objects>
-                <tableViewController id="k0T-xg-pfz" sceneMemberID="viewController">
+                <tableViewController id="k0T-xg-pfz" customClass="SoundsInSoundBoardTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uPn-e2-KXz">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,9 @@
                             <outlet property="delegate" destination="k0T-xg-pfz" id="cD2-G5-j3J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tsx-X9-GYi"/>
+                    <navigationItem key="navigationItem" id="tsx-X9-GYi">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="1tI-VR-kte"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSH-f4-9Es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,6 +114,9 @@
         </class>
         <class className="SoundBoardsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardsTableViewController.h"/>
+        </class>
+        <class className="SoundsInSoundBoardTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundsInSoundBoardTableViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

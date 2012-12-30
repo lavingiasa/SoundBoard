@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController id="SN3-hM-fKp" customClass="SoundBoardsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jtB-Zl-1kY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -34,6 +34,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="opo-E0-vDw" kind="push" id="6mH-US-euv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -105,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="opo-E0-vDw" kind="relationship" relationship="rootViewController" id="T0r-rE-W4F"/>
+                        <segue destination="SN3-hM-fKp" kind="relationship" relationship="rootViewController" id="G7v-0V-ej1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLM-aC-MjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,9 +125,6 @@
         </class>
         <class className="SoundBoardSoundsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardSoundsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="playSound1:"/>
-            </relationships>
         </class>
         <class className="SoundBoardsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardsTableViewController.h"/>

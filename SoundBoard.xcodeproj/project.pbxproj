@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9717270D1690CBD200CC4171 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 9717270C1690CBD200CC4171 /* Sound.m */; };
 		975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA1168FF98500708212 /* SoundButton+Effect.m */; };
 		975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA4168FFA1100708212 /* SoundBoardGroup+Create.m */; };
 		976CFDAF168FB43300D11FE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDAE168FB43300D11FE8 /* UIKit.framework */; };
@@ -14,7 +15,6 @@
 		976CFDB3168FB43300D11FE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDB2168FB43300D11FE8 /* CoreGraphics.framework */; };
 		976CFDB9168FB43300D11FE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDB7168FB43300D11FE8 /* InfoPlist.strings */; };
 		976CFDBB168FB43300D11FE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDBA168FB43300D11FE8 /* main.m */; };
-		976CFDBF168FB43300D11FE8 /* SoundBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDBE168FB43300D11FE8 /* SoundBoardAppDelegate.m */; };
 		976CFDC1168FB43300D11FE8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC0168FB43300D11FE8 /* Default.png */; };
 		976CFDC3168FB43300D11FE8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC2168FB43300D11FE8 /* Default@2x.png */; };
 		976CFDC5168FB43300D11FE8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 976CFDC4168FB43300D11FE8 /* Default-568h@2x.png */; };
@@ -30,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9717270B1690CBD200CC4171 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		9717270C1690CBD200CC4171 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 		975DBBA0168FF98500708212 /* SoundButton+Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundButton+Effect.h"; sourceTree = "<group>"; };
 		975DBBA1168FF98500708212 /* SoundButton+Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SoundButton+Effect.m"; sourceTree = "<group>"; };
 		975DBBA3168FFA1100708212 /* SoundBoardGroup+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundBoardGroup+Create.h"; sourceTree = "<group>"; };
@@ -42,8 +44,6 @@
 		976CFDB8168FB43300D11FE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		976CFDBA168FB43300D11FE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		976CFDBC168FB43300D11FE8 /* SoundBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoundBoard-Prefix.pch"; sourceTree = "<group>"; };
-		976CFDBD168FB43300D11FE8 /* SoundBoardAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundBoardAppDelegate.h; sourceTree = "<group>"; };
-		976CFDBE168FB43300D11FE8 /* SoundBoardAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundBoardAppDelegate.m; sourceTree = "<group>"; };
 		976CFDC0168FB43300D11FE8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		976CFDC2168FB43300D11FE8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		976CFDC4168FB43300D11FE8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 			children = (
 				976CFDF1168FC53D00D11FE8 /* SoundsInSoundBoardTableViewController.h */,
 				976CFDF2168FC53D00D11FE8 /* SoundsInSoundBoardTableViewController.m */,
-				976CFDBD168FB43300D11FE8 /* SoundBoardAppDelegate.h */,
-				976CFDBE168FB43300D11FE8 /* SoundBoardAppDelegate.m */,
+				9717270B1690CBD200CC4171 /* Sound.h */,
+				9717270C1690CBD200CC4171 /* Sound.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
 				976CFDDF168FBD0E00D11FE8 /* SoundBoardsTableViewController.h */,
 				976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */,
@@ -225,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				976CFDBB168FB43300D11FE8 /* main.m in Sources */,
-				976CFDBF168FB43300D11FE8 /* SoundBoardAppDelegate.m in Sources */,
 				976CFDCB168FB43300D11FE8 /* SoundBoardViewController.m in Sources */,
 				976CFDD9168FBBF400D11FE8 /* SoundBoard.xcdatamodeld in Sources */,
 				976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */,
@@ -235,6 +234,7 @@
 				976CFDF3168FC53D00D11FE8 /* SoundsInSoundBoardTableViewController.m in Sources */,
 				975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */,
 				975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */,
+				9717270D1690CBD200CC4171 /* Sound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

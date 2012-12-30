@@ -10,6 +10,10 @@
 
 @implementation Sound
 
+@synthesize soundsArray = _soundsArray;
+
+
+
 @end
 
-//This class will hold all the sounds
+//This class will hold all the sounds in an array of NSDictionaries

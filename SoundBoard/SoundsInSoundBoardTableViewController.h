@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 #import "SoundBoardGroup.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface SoundsInSoundBoardTableViewController : CoreDataTableViewController
+@interface SoundsInSoundBoardTableViewController : CoreDataTableViewController <AVAudioPlayerDelegate>
 
 @end

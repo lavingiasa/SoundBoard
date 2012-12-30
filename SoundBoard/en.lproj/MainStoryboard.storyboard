@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4ph-zG-hUh">
     <dependencies>
-        <deployment version="1280" identifier="iOS"/>
+        <deployment version="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController id="SN3-hM-fKp" customClass="SoundBoardsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jtB-Zl-1kY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -34,9 +34,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="k0T-xg-pfz" kind="push" id="Kct-pq-J7o"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -46,51 +43,59 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erk-tg-2mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="205"/>
+            <point key="canvasLocation" x="-385" y="-174"/>
         </scene>
-        <!--Sounds In Sound Board Table View Controller-->
-        <scene sceneID="MF0-Jc-GLI">
+        <!--Sound Board Sounds View Controller-->
+        <scene sceneID="PO8-wo-ArD">
             <objects>
-                <tableViewController id="k0T-xg-pfz" customClass="SoundsInSoundBoardTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uPn-e2-KXz">
+                <viewController id="opo-E0-vDw" customClass="SoundBoardSoundsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hml-J3-6aw">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SoundButton Cell" textLabel="OsP-sI-91o" detailTextLabel="jMv-S2-ExS" style="IBUITableViewCellStyleSubtitle" id="ygC-n3-aMH">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-sI-91o">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-S2-ExS">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="k0T-xg-pfz" id="Mj1-wQ-aFk"/>
-                            <outlet property="delegate" destination="k0T-xg-pfz" id="cD2-G5-j3J"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="tsx-X9-GYi">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="1tI-VR-kte"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gSH-f4-9Es" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUb-yt-kwU">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqd-5Z-X6P">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="144" id="Peu-KN-zX4"/>
+                                            <constraint firstAttribute="height" constant="122" id="pLW-i3-QnB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playSound1:" destination="opo-E0-vDw" eventType="touchUpInside" id="AJp-vY-yUa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Vqd-5Z-X6P" firstAttribute="centerX" secondItem="XUb-yt-kwU" secondAttribute="centerX" type="default" id="dbv-tZ-MLl"/>
+                                    <constraint firstItem="Vqd-5Z-X6P" firstAttribute="top" secondItem="XUb-yt-kwU" secondAttribute="top" constant="100" id="lbr-nV-2Er"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XUb-yt-kwU" firstAttribute="leading" secondItem="hml-J3-6aw" secondAttribute="leading" type="default" id="MEK-lT-1gK"/>
+                            <constraint firstItem="XUb-yt-kwU" firstAttribute="bottom" secondItem="hml-J3-6aw" secondAttribute="bottom" type="default" id="dl3-mg-zZU"/>
+                            <constraint firstItem="XUb-yt-kwU" firstAttribute="top" secondItem="hml-J3-6aw" secondAttribute="top" type="default" id="hEW-5E-RPS"/>
+                            <constraint firstItem="XUb-yt-kwU" firstAttribute="trailing" secondItem="hml-J3-6aw" secondAttribute="trailing" type="default" id="uhO-5U-HVz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RfL-qW-VIh"/>
+                    <connections>
+                        <outlet property="playSound1" destination="Vqd-5Z-X6P" id="A2X-dU-0LZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZW-8m-RrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127" y="205"/>
+            <point key="canvasLocation" x="72" y="205"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IiY-tu-1eT">
@@ -100,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="SN3-hM-fKp" kind="relationship" relationship="rootViewController" id="tU4-gX-14o"/>
+                        <segue destination="opo-E0-vDw" kind="relationship" relationship="rootViewController" id="T0r-rE-W4F"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLM-aC-MjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,11 +117,17 @@
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
         </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SoundBoardSoundsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardSoundsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playSound1:"/>
+            </relationships>
+        </class>
         <class className="SoundBoardsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardsTableViewController.h"/>
-        </class>
-        <class className="SoundsInSoundBoardTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundsInSoundBoardTableViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -10,6 +10,6 @@
 
 @interface Sound : NSObject
 
-@property (nonatomic, strong) NSArray *soundsArray;
+@property (nonatomic, strong) NSMutableArray *soundsArray;
 
 @end

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "SoundBoardsTableViewController.h"
+#import "SoundBoardGroup.h"
 
 @interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
 
+@property (nonatomic, strong) SoundBoardGroup *board;
 
 @end

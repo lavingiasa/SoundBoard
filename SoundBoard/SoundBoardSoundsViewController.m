@@ -14,6 +14,14 @@
 
 @implementation SoundBoardSoundsViewController
 
+@synthesize board = _board;
+
+- (void)setGroup:(SoundBoardGroup *)board
+{
+    _board = board;
+    self.title = board.title;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +30,8 @@
     }
     return self;
 }
+
+//insert your method here
 
 - (void)viewDidLoad
 {

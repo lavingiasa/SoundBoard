@@ -13,7 +13,7 @@
 
 @interface SoundBoardGroup : NSManagedObject
 
-@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSSet *contains;
 @end
 

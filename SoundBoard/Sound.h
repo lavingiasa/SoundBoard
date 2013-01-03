@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "SoundButton.h"
 
 @interface Sound : NSObject
 
 @property (nonatomic, strong) NSMutableArray *soundsArray;
+- (NSMutableArray *) getSoundsArray;
+
 
 @end
+

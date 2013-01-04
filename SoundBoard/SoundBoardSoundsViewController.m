@@ -17,22 +17,24 @@
 @synthesize board = _board;
 
 - (void)setGroup:(SoundBoardGroup *)board
-{
+    {
     _board = board;
     self.title = board.title;
-}
+    }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+    {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+    if(self)
+        {
         // Custom initialization
-    }
+        }
     return self;
-}
+    }
 
 - (IBAction)playSound1:(id)sender
-{
+    {
     NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
     AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
     
@@ -41,18 +43,18 @@
     /*
     For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
     */
-}
+    }
 
 - (void)viewDidLoad
-{
+    {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-}
+    }
 
 - (void)didReceiveMemoryWarning
-{
+    {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+    }
 
 @end

@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSSet *contains;
+
 @end
 
 @interface SoundBoardGroup (CoreDataGeneratedAccessors)

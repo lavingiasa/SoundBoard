@@ -96,9 +96,9 @@
 				976CFDEB168FC3C000D11FE8 /* SoundButton.h */,
 				976CFDEC168FC3C000D11FE8 /* SoundButton.m */,
 				976CFDE8168FC3AD00D11FE8 /* SoundBoardGroup.h */,
+				976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */,
 				975DBBA0168FF98500708212 /* SoundButton+Effect.h */,
 				975DBBA1168FF98500708212 /* SoundButton+Effect.m */,
-				976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";

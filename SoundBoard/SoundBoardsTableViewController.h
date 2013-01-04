@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 #import "Sound.h"
+#import "SoundBoardGroup.h"
 
 
 @interface SoundBoardsTableViewController : CoreDataTableViewController

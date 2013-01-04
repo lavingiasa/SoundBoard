@@ -11,7 +11,7 @@
 @implementation SoundButton (Effect)
 
 + (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context
-{
+    {
     //add implimentation to return button here.
     SoundButton * button = nil;
     button = [NSEntityDescription insertNewObjectForEntityForName:@"SoundButton" inManagedObjectContext:context];
@@ -22,7 +22,7 @@
     
     return button;
 
-}
+    }
 
 
 @end

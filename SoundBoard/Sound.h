@@ -14,7 +14,5 @@
 
 @property (nonatomic, strong) NSMutableArray *soundsArray;
 
-- (NSMutableArray *) getSoundsArray;
-
 @end
 

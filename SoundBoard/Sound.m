@@ -10,12 +10,7 @@
 
 @implementation Sound
 
-@synthesize soundsArray = _soundsArray;
-
-- (NSMutableArray *) getSoundsArray
-    {
-    return _soundsArray;
-    }
+@synthesize soundsArray;
 
 @end
 

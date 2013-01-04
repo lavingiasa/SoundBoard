@@ -21,20 +21,63 @@
     {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundBoardGroup"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
-    
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.soundButtonDatabase.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     }
 
+- (void)fetchDataIntoDocument:(UIManagedDocument *)document
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *sounds = [Sound getSoundsArray];
+        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+            for (int i = 0; i < [sounds count]; i++)
+            {
+                SoundButton* object = sounds [i];
+                [object addToDoc: object inManagedObjectContext:document.managedObjectContext];
+                
 
+            }
+            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+            // because if we quit the app before autosave happens, then it'll come up blank next time we run
+            // this is what it would look like (ADDED AFTER LECTURE) ...
+            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+            // note that we don't do anything in the completion handler this time
+        }];
+    });
+}
+
+/* Some sample code
+ - (void)fetchFlickrDataIntoDocument:(UIManagedDocument *)document
+ {
+ dispatch_queue_t fetchQ = dispatch_queue_create("Flickr fetcher", NULL);
+ dispatch_async(fetchQ, ^{
+ NSArray *photos = [FlickrFetcher recentGeoreferencedPhotos];
+ [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+ for (NSDictionary *flickrInfo in photos) {
+ [Photo photoWithFlickrInfo:flickrInfo inManagedObjectContext:document.managedObjectContext];
+ // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
+ }
+ // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
+ // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
+ // because if we quit the app before autosave happens, then it'll come up blank next time we run
+ // this is what it would look like (ADDED AFTER LECTURE) ...
+ [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+ // note that we don't do anything in the completion handler this time
+ }];
+ });
+ dispatch_release(fetchQ);
+ }
+ */
 
 
 - (id)initWithStyle:(UITableViewStyle)style
     {
     self = [super initWithStyle:style];
-    
+ 
     if (self)
         {
         // Custom initialization

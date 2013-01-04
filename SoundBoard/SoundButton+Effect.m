@@ -24,5 +24,28 @@
 
     }
 
++ (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+{
+    SoundButton *button = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) {
+        // handle error
+    } else if ([matches count] == 0) {
+        button = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
+        button = soundButton;
+    } else {
+        button = [matches lastObject];
+    }
+    
+    return button;
+}
+
 
 @end

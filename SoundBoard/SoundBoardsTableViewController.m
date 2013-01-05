@@ -75,7 +75,7 @@
         for (int i = 0; i < [sounds count]; i++)
             {
             SoundButton* object = sounds[i];
-            [object addToDoc:object inManagedObjectContext:document.managedObjectContext];
+            [self addToDoc:object inManagedObjectContext:document.managedObjectContext];
             }
             // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
             // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
@@ -211,7 +211,7 @@
         }
     
     // ask NSFetchedResultsController for the NSMO at the row in question
-        [self addSampleData];
+    [self addSampleData];
     SoundBoardGroup* group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Then configure the cell using it ...

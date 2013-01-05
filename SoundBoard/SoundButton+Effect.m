@@ -47,7 +47,7 @@
     
     return button;
 }
-
+/*
 - (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
 {
     button.title = title;
@@ -56,6 +56,6 @@
     
     return button;
 }
-
+*/
 
 @end

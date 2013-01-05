@@ -16,7 +16,7 @@
 
 @synthesize soundButtonDatabase = _soundButtonDatabase;
 @synthesize soundsArray = _soundsArray;
-
+@synthesize test = _test;
 
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
@@ -61,10 +61,11 @@
 - (void)addSampleData
     {
     NSLog(@"here");
-    SoundButton * test;
-    [test editSoundsButton:test WithTitle:@"testTitle" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [self addToDoc:test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [self addSoundButton:test toArray:self.soundsArray];
+     _test.title = @"Test";
+    //[_test editSoundsButton:_test WithTitle:@"testTitle" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [_soundsArray addObject:_test];
+        
     }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document

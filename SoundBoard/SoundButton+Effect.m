@@ -10,7 +10,7 @@
 
 @implementation SoundButton (Effect)
 
-+ (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context
+- (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context
     {
     //add implimentation to return button here.
     SoundButton * button = nil;
@@ -24,7 +24,7 @@
 
     }
 
-+ (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 {
     SoundButton *button = nil;
     

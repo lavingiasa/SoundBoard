@@ -10,6 +10,8 @@
 #import "CoreDataTableViewController.h"
 #import "Sound.h"
 #import "SoundBoardGroup.h"
+#import "SoundButton.h"
+#import "SoundButton+Effect.h"
 
 
 @interface SoundBoardsTableViewController : CoreDataTableViewController

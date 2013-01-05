@@ -15,5 +15,6 @@
 @interface SoundBoardsTableViewController : CoreDataTableViewController
 
 @property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
+@property (nonatomic, strong) NSMutableArray *soundsArray;
 
 @end

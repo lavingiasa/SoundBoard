@@ -7,6 +7,7 @@
 //
 
 #import "SoundBoardsTableViewController.h"
+#import "Sound.h"
 
 @interface SoundBoardsTableViewController ()
 
@@ -15,6 +16,7 @@
 @implementation SoundBoardsTableViewController
 
 @synthesize soundButtonDatabase = _soundButtonDatabase;
+@synthesize soundsArray = _soundsArray;
 
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
@@ -32,13 +34,14 @@
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
-        NSArray *sounds = [Sound soundsArray];
+        NSArray * sounds;
+        sounds = _soundsArray;
         [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
         
         for (int i = 0; i < [sounds count]; i++)
             {
             SoundButton* object = sounds[i];
-            [object addToDoc: object inManagedObjectContext:document.managedObjectContext];
+            [object addToDoc:object inManagedObjectContext:document.managedObjectContext];
             }
             // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
             // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better

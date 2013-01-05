@@ -8,6 +8,7 @@
 
 #import "SoundBoardsTableViewController.h"
 #import "Sound.h"
+#import "SoundButton.h"
 
 @interface SoundBoardsTableViewController ()
 

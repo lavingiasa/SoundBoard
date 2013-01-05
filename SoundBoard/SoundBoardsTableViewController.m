@@ -29,10 +29,36 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     }
+
+- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+{
+    SoundButton *button = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) {
+        // handle error
+    } else if ([matches count] == 0) {
+        button = [NSEntityDescription insertNewObjectForEntityForName:@"SoundButton" inManagedObjectContext:context];
+        button = soundButton;
+    } else {
+        button = [matches lastObject];
+    }
+    
+    return button;
+}
+
+
 - (void)addSampleData
 {
     SoundButton * test;
     [test editSoundsButton:test WithTitle:@"test title" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [self addToDoc:test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
 }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
@@ -185,10 +211,11 @@
         }
     
     // ask NSFetchedResultsController for the NSMO at the row in question
+        [self addSampleData];
     SoundBoardGroup* group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Then configure the cell using it ...
-    cell.textLabel.text = [group title];
+    cell.textLabel.text = group.title;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d sounds", [[group contains] count]];
     
     return cell;

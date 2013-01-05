@@ -61,10 +61,12 @@
 - (void)addSampleData
     {
     NSLog(@"here");
-     _test.title = @"Test";
+    _test.title = @"Test";
     //[_test editSoundsButton:_test WithTitle:@"testTitle" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [_soundsArray addObject:_test];
+    NSString * asdf = @"asdf";
+    [_soundsArray addObject:asdf];
         
     }
 

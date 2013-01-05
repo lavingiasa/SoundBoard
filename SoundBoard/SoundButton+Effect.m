@@ -48,10 +48,10 @@
     return button;
 }
 
-- (SoundButton *) editSoundsButton:(SoundButton *) button withTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;
+- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
 {
     button.title = title;
-    button.partOf = [SoundBoardGroup groupWithName: @"Default" inManagedObjectContext:context];
+    button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
     //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
     
     return button;

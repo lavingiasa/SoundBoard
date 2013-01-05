@@ -32,7 +32,7 @@
 - (void)addSampleData
 {
     SoundButton * test;
-    
+    [test editSoundsButton:test WithTitle:@"test title" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
 }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document

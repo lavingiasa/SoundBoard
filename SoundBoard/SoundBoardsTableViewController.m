@@ -42,7 +42,7 @@
         for (int i = 0; i < [sounds count]; i++)
             {
             SoundButton* object = sounds[i];
-            [object addToDoc:object inManagedObjectContext:document.managedObjectContext];
+            [object addToDoc:object inManagedObjectContext:[document managedObjectContext]];
             }
             // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
             // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better

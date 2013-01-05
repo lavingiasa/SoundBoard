@@ -58,7 +58,6 @@
     return soundButton;
 }
 
-
 - (void)addSampleData
     {
     NSLog(@"here");
@@ -146,7 +145,7 @@
         [self.soundButtonDatabase saveToURL:self.soundButtonDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success)
          {
              [self setupFetchedResultsController];
-            // [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+             [self fetchDataIntoDocument:self.soundButtonDatabase];
          }];
         }
     else if(self.soundButtonDatabase.documentState == UIDocumentStateClosed)
@@ -154,7 +153,7 @@
         [self.soundButtonDatabase openWithCompletionHandler:^(BOOL success)
             {
             [self setupFetchedResultsController];
-            //[self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+            [self fetchDataIntoDocument:self.soundButtonDatabase];
         }];
         }
     else if(self.soundButtonDatabase.documentState == UIDocumentStateNormal)

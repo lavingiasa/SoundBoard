@@ -59,18 +59,16 @@
 
 
 - (void)addSampleData
-{
+    {
+    NSLog(@"here");
     SoundButton * test;
     [test editSoundsButton:test WithTitle:@"testTitle" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [self addSoundButton:test toArray:_soundsArray];
-}
+    [self addSoundButton:test toArray:self.soundsArray];
+    }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
-    {
-    
-    [self addSampleData];
-    
+    {    
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
@@ -81,7 +79,7 @@
         for (int i = 0; i < [sounds count]; i++)
             {
             SoundButton* object = sounds[i];
-            [object addToDoc:object inManagedObjectContext:[document managedObjectContext]];
+            [self addToDoc:object inManagedObjectContext:document.managedObjectContext];
             }
             // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
             // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
@@ -182,6 +180,8 @@
         url = [url URLByAppendingPathComponent:@"Default Sounds Database"];
         self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
         }
+    
+    [self addSampleData];
     }
 
 - (void)didReceiveMemoryWarning

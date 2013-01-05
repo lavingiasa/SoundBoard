@@ -18,6 +18,7 @@
 @synthesize soundsArray = _soundsArray;
 
 
+
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
     {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundBoardGroup"];
@@ -68,9 +69,7 @@
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
     {
-    
-    [self addSampleData];
-    
+        
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
@@ -182,7 +181,10 @@
         url = [url URLByAppendingPathComponent:@"Default Sounds Database"];
         self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
         }
+        [self addSampleData];
+
     }
+
 
 - (void)didReceiveMemoryWarning
     {
@@ -201,7 +203,6 @@
         }
     
     // ask NSFetchedResultsController for the NSMO at the row in question
-    [self addSampleData];
     SoundBoardGroup* group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Then configure the cell using it ...

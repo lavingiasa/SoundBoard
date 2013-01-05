@@ -19,4 +19,6 @@
 @property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
 @property (nonatomic, strong) NSMutableArray *soundsArray;
 
+- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+
 @end

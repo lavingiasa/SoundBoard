@@ -61,13 +61,13 @@
 - (void)addSampleData
     {
     NSLog(@"here");
-    _test.title = @"Test";
-    //[_test editSoundsButton:_test WithTitle:@"testTitle" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    
+    _test = [[SoundButton alloc] init];
+    [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"group" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [_soundsArray addObject:_test];
-    NSString * asdf = @"asdf";
-    [_soundsArray addObject:asdf];
-        
+    _soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
+
+    NSLog(@"%i", [_soundsArray count]);
     }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document

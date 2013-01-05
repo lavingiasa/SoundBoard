@@ -38,7 +38,7 @@
     if (!matches || ([matches count] > 1)) {
         // handle error
     } else if ([matches count] == 0) {
-        button = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:context];
+        button = [NSEntityDescription insertNewObjectForEntityForName:@"SoundButton" inManagedObjectContext:context];
         button = soundButton;
     } else {
         button = [matches lastObject];

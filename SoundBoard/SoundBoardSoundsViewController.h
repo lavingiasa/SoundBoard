@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "SoundBoardsTableViewController.h"
 #import "SoundBoardGroup.h"
+#import "SoundButton.h"
+
 
 @interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
 

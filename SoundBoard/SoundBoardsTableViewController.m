@@ -29,9 +29,16 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     }
+- (void)addSampleData
+{
+    SoundButton * test;
+    [test editSoundsButton:test WithTitle:@"test title" andPartOf:@"Default" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+}
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
     {
+    
+    [self addSampleData];
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
@@ -99,25 +106,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     }
-/*
-- (void)setupFetchedResultsController
-    {
-    //
-    }
-
-- (void) fetchSoundDataIntoDocument: (UIManagedDocument *)document
-    {
-    dispatch_queue_t fetchQ = dispatch_queue_create("Sound fetcher", NULL);
-    dispatch_async(fetchQ, ^{
-        NSArray *soundButtons = ;//array of NSDictionaries of sound buttons
-        [document.managedObjectContext performBlock:^{
-           for (NSDictionary *soundButtonInfo in soundButtons)
-           {
-               
-           }
-        }];
-    });
-    }
 
 - (void) useDocument
     {
@@ -126,7 +114,7 @@
         [self.soundButtonDatabase saveToURL:self.soundButtonDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success)
          {
              [self setupFetchedResultsController];
-             [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+            // [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
          }];
         }
     else if(self.soundButtonDatabase.documentState == UIDocumentStateClosed)
@@ -134,7 +122,7 @@
         [self.soundButtonDatabase openWithCompletionHandler:^(BOOL success)
             {
             [self setupFetchedResultsController];
-            [self fetchSoundDataIntoDocument:self.soundButtonDatabase];
+            //[self fetchSoundDataIntoDocument:self.soundButtonDatabase];
         }];
         }
     else if(self.soundButtonDatabase.documentState == UIDocumentStateNormal)
@@ -163,7 +151,7 @@
         self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
         }
     }
-*/
+
 - (void)didReceiveMemoryWarning
     {
     [super didReceiveMemoryWarning];
@@ -176,14 +164,14 @@
     {   
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
     }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
     {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
     }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -205,6 +193,8 @@
     
     return cell;
     }
+
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
     {

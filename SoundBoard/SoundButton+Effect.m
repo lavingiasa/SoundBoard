@@ -7,10 +7,11 @@
 //
 
 #import "SoundButton+Effect.h"
+#import "SoundBoardGroup+Create.h"
 
 @implementation SoundButton (Effect)
 
-+ (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context
+- (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context
     {
     //add implimentation to return button here.
     SoundButton * button = nil;
@@ -24,7 +25,7 @@
 
     }
 
-+ (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 {
     SoundButton *button = nil;
     
@@ -43,6 +44,15 @@
     } else {
         button = [matches lastObject];
     }
+    
+    return button;
+}
+
+- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
+{
+    button.title = title;
+    button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
+    //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
     
     return button;
 }

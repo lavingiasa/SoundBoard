@@ -29,9 +29,16 @@
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     }
+- (void)addSampleData
+{
+    SoundButton * test;
+    
+}
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
     {
+    
+    [self addSampleData];
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
@@ -157,14 +164,14 @@
     {   
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
     }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
     {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
     }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -186,6 +193,8 @@
     
     return cell;
     }
+
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
     {

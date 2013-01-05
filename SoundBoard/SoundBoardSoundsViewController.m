@@ -7,7 +7,8 @@
 //
 
 #import "SoundBoardSoundsViewController.h"
-
+#import "SoundBoardsTableViewController.h"
+#import "SoundBoardGroup.h"
 @interface SoundBoardSoundsViewController ()
 
 @end

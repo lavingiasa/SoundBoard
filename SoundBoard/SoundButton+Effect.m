@@ -7,6 +7,7 @@
 //
 
 #import "SoundButton+Effect.h"
+#import "SoundBoardGroup+Create.h"
 
 @implementation SoundButton (Effect)
 
@@ -43,6 +44,15 @@
     } else {
         button = [matches lastObject];
     }
+    
+    return button;
+}
+
+- (SoundButton *) editSoundsButton:(SoundButton *) button withTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;
+{
+    button.title = title;
+    button.partOf = [SoundBoardGroup groupWithName: @"Default" inManagedObjectContext:context];
+    //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
     
     return button;
 }

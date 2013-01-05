@@ -25,29 +25,6 @@
 
     }
 
-- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
-{
-    SoundButton *button = nil;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    
-    NSError *error = nil;
-    NSArray *matches = [context executeFetchRequest:request error:&error];
-    
-    if (!matches || ([matches count] > 1)) {
-        // handle error
-    } else if ([matches count] == 0) {
-        button = [NSEntityDescription insertNewObjectForEntityForName:@"SoundButton" inManagedObjectContext:context];
-        button = soundButton;
-    } else {
-        button = [matches lastObject];
-    }
-    
-    return button;
-}
-
 - (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
 {
     button.title = title;

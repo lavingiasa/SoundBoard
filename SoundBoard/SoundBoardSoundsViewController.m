@@ -31,9 +31,11 @@
         request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         
         NSError *error = nil;
-        NSArray *sounds = [[SoundBoardsTableViewController getManagedObjectContext] executeFetchRequest:request error:&error];
+        NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
         return sounds;
 }
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
     {

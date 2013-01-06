@@ -34,17 +34,18 @@
     return self;
     }
 
-- (IBAction)playSound1:(id)sender
+/*- (IBAction)playSound1:(id)sender
     {
     NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
     AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
     
     theAudio.delegate = self;
     [theAudio play];
-    /*
-    For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
-    */
+ 
+    //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
+ 
     }
+/*
 
 - (void)viewDidLoad
     {

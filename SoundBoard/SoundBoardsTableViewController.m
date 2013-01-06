@@ -17,6 +17,7 @@
 @synthesize soundButtonDatabase = _soundButtonDatabase;
 @synthesize soundsArray = _soundsArray;
 @synthesize test = _test;
+@synthesize numTimesOpened = _numTimesOpened;
 
 
 - (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
@@ -184,7 +185,12 @@
         url = [url URLByAppendingPathComponent:@"Default Sounds Database"];
         self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
         }
-        [self addSampleData];
+        if(_numTimesOpened == 0)
+        {
+            [self addSampleData];
+            _numTimesOpened = [[NSNumber alloc] initWithInt:5];
+        }
+
 
     }
 

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
 @property (nonatomic, strong) NSMutableArray *soundsArray;
 @property (nonatomic, strong) SoundButton *test;
+@property (nonatomic, strong) NSNumber *numTimesOpened;
 
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 

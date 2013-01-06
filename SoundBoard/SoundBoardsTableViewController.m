@@ -15,7 +15,7 @@
 @implementation SoundBoardsTableViewController
 
 @synthesize soundButtonDatabase = _soundButtonDatabase;
-@synthesize soundsArray = _soundsArray;
+//@synthesize soundsArray = _soundsArray;
 @synthesize test = _test;
 @synthesize test2 = _test2;
 @synthesize numTimesOpened = _numTimesOpened;
@@ -62,23 +62,11 @@
 
 - (void)addSampleData
     {
-    NSLog(@"here");
     //Item * items = [[Item alloc]initWithEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:context]insertIntoManagedObjectContext:context];
     self.test = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    _soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
-
-    NSLog(@"%i", [_soundsArray count]);
-    
-    NSLog(@"here");
-    //Item * items = [[Item alloc]initWithEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:context]insertIntoManagedObjectContext:context];
-    self.test2 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [_test2 editSoundsButton:_test2 WithTitle:@"title2" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [self addToDoc:_test2 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    _soundsArray = [[NSMutableArray alloc] initWithObjects:_test,_test2, nil];
-        
-    NSLog(@"%i", [_soundsArray count]);
+    //_soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
     }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
@@ -88,7 +76,7 @@
     dispatch_async(fetchQ, ^{
         //NSArray *sounds = [Sound getSoundsArray];
         NSArray * sounds;
-        sounds = _soundsArray;
+       // sounds = _soundsArray;
         [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
         
         for (int i = 0; i < [sounds count]; i++)
@@ -162,6 +150,11 @@
          {
              [self setupFetchedResultsController];
              [self fetchDataIntoDocument:self.soundButtonDatabase];
+             if(_numTimesOpened == 0)
+             {
+                 [self addSampleData];
+                 _numTimesOpened = [[NSNumber alloc] initWithInt:5];
+             }
          }];
         }
     else if(self.soundButtonDatabase.documentState == UIDocumentStateClosed)
@@ -175,6 +168,7 @@
     else if(self.soundButtonDatabase.documentState == UIDocumentStateNormal)
         {
         [self setupFetchedResultsController];
+            
         }
     }
 
@@ -197,11 +191,7 @@
         url = [url URLByAppendingPathComponent:@"Default Sounds Database"];
         self.soundButtonDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
         }
-        if(_numTimesOpened == 0)
-        {
-            [self addSampleData];
-            _numTimesOpened = [[NSNumber alloc] initWithInt:5];
-        }
+        
 
 
     }

@@ -14,6 +14,9 @@
 
 
 @interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
+    {
+    IBOutlet UIScrollView *scroller;
+    }
 
 @property (nonatomic, strong) SoundBoardGroup *board;
 

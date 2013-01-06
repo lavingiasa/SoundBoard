@@ -45,7 +45,7 @@
     //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
  
     }
-/*
+*/
 
 - (void)viewDidLoad
     {

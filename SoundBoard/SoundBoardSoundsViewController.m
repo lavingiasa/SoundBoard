@@ -16,25 +16,24 @@
 @implementation SoundBoardSoundsViewController
 
 @synthesize board = _board;
+- (NSArray*) getSoundsFromGroup: (NSString *) group
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
+    request.predicate = [NSPredicate predicateWithFormat:@"title = %@", group];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
+    return sounds;
+}
 
 - (void)setGroup:(SoundBoardGroup *)board
     {
     _board = board;
     self.title = board.title;
+    [self getSoundsFromGroup:board.title];
     }
-
-- (NSArray*) getSoundsFromGroup: (NSString *) group
-{
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
-        request.predicate = [NSPredicate predicateWithFormat:@"title = %@", group];
-        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-        request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-        
-        NSError *error = nil;
-        NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
-        return sounds;
-}
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -35,7 +35,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="opo-E0-vDw" kind="push" id="6mH-US-euv"/>
+                                    <segue destination="opo-E0-vDw" kind="push" identifier="Show Grid" id="6mH-US-euv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,30 +57,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUb-yt-kwU">
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqd-5Z-X6P">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="144" id="Peu-KN-zX4"/>
-                                            <constraint firstAttribute="height" constant="122" id="pLW-i3-QnB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playSound1:" destination="opo-E0-vDw" eventType="touchUpInside" id="AJp-vY-yUa"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Vqd-5Z-X6P" firstAttribute="centerX" secondItem="XUb-yt-kwU" secondAttribute="centerX" type="default" id="dbv-tZ-MLl"/>
-                                    <constraint firstItem="Vqd-5Z-X6P" firstAttribute="top" secondItem="XUb-yt-kwU" secondAttribute="top" constant="100" id="lbr-nV-2Er"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -92,9 +69,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RfL-qW-VIh"/>
-                    <connections>
-                        <outlet property="playSound1" destination="Vqd-5Z-X6P" id="A2X-dU-0LZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZW-8m-RrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,6 +99,9 @@
         </class>
         <class className="SoundBoardSoundsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardSoundsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playSound1:"/>
+            </relationships>
         </class>
         <class className="SoundBoardsTableViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardsTableViewController.h"/>

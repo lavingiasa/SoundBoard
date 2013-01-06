@@ -63,7 +63,7 @@
     NSLog(@"here");
     //Item * items = [[Item alloc]initWithEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:context]insertIntoManagedObjectContext:context];
     self.test = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"group" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     _soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
 

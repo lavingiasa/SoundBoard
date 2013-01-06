@@ -23,7 +23,7 @@
     self.title = board.title;
     }
 
-- (NSArray*) getSoundsFromGroup: (NSString *) group inManagedObjectContext:(NSManagedObjectContext *) context
+- (NSArray*) getSoundsFromGroup: (NSString *) group
 {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
         request.predicate = [NSPredicate predicateWithFormat:@"title = %@", group];
@@ -31,9 +31,11 @@
         request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         
         NSError *error = nil;
-        NSArray *sounds = [context executeFetchRequest:request error:&error];
+        NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
         return sounds;
 }
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
     {

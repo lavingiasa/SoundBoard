@@ -24,4 +24,6 @@
 
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 
+- (NSManagedObjectContext *) getContext;
+
 @end

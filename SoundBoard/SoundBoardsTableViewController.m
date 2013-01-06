@@ -31,6 +31,11 @@
                                                                                    cacheName:nil];
     }
 
+- (NSManagedObjectContext *) getContext
+{
+    return self.soundButtonDatabase.managedObjectContext;
+}
+
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 {
     SoundButton *button = nil;

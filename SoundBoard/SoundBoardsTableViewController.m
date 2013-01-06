@@ -17,6 +17,7 @@
 @synthesize soundButtonDatabase = _soundButtonDatabase;
 @synthesize soundsArray = _soundsArray;
 @synthesize test = _test;
+@synthesize test2 = _test2;
 @synthesize numTimesOpened = _numTimesOpened;
 
 
@@ -68,6 +69,15 @@
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     _soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
 
+    NSLog(@"%i", [_soundsArray count]);
+    
+    NSLog(@"here");
+    //Item * items = [[Item alloc]initWithEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:context]insertIntoManagedObjectContext:context];
+    self.test2 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [_test2 editSoundsButton:_test2 WithTitle:@"title2" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [self addToDoc:_test2 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    _soundsArray = [[NSMutableArray alloc] initWithObjects:_test,_test2, nil];
+        
     NSLog(@"%i", [_soundsArray count]);
     }
 
@@ -130,6 +140,12 @@
         }
     return self;
     }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return 1;
+}
 
 - (void)viewDidLoad
     {
@@ -216,7 +232,7 @@
     
     // Then configure the cell using it ...
     cell.textLabel.text = group.title;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d sounds", [[group contains] count]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d sounds", [group.contains count]];
     
     return cell;
     }

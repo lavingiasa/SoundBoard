@@ -13,6 +13,8 @@
 		971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */; };
 		975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA1168FF98500708212 /* SoundButton+Effect.m */; };
 		975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA4168FFA1100708212 /* SoundBoardGroup+Create.m */; };
+		976555ED169A38D600EC6EB7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 976555EC169A38D600EC6EB7 /* icon.png */; };
+		976555F0169A390900EC6EB7 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 976555EF169A390900EC6EB7 /* icon2.png */; };
 		976CFDAF168FB43300D11FE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDAE168FB43300D11FE8 /* UIKit.framework */; };
 		976CFDB1168FB43300D11FE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDB0168FB43300D11FE8 /* Foundation.framework */; };
 		976CFDB3168FB43300D11FE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CFDB2168FB43300D11FE8 /* CoreGraphics.framework */; };
@@ -43,6 +45,8 @@
 		975DBBA1168FF98500708212 /* SoundButton+Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SoundButton+Effect.m"; sourceTree = "<group>"; };
 		975DBBA3168FFA1100708212 /* SoundBoardGroup+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundBoardGroup+Create.h"; sourceTree = "<group>"; };
 		975DBBA4168FFA1100708212 /* SoundBoardGroup+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SoundBoardGroup+Create.m"; sourceTree = "<group>"; };
+		976555EC169A38D600EC6EB7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		976555EF169A390900EC6EB7 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon2.png; path = ../icon2.png; sourceTree = "<group>"; };
 		976CFDAA168FB43300D11FE8 /* SoundBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		976CFDAE168FB43300D11FE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		976CFDB0168FB43300D11FE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +157,8 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				976555EF169A390900EC6EB7 /* icon2.png */,
+				976555EC169A38D600EC6EB7 /* icon.png */,
 				971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */,
 				971727141690D0E600CC4171 /* SoundBoardAppDelegate.h */,
 				976CFDB6168FB43300D11FE8 /* SoundBoard-Info.plist */,
@@ -223,6 +229,8 @@
 				976CFDC3168FB43300D11FE8 /* Default@2x.png in Resources */,
 				976CFDC5168FB43300D11FE8 /* Default-568h@2x.png in Resources */,
 				976CFDC8168FB43300D11FE8 /* MainStoryboard.storyboard in Resources */,
+				976555ED169A38D600EC6EB7 /* icon.png in Resources */,
+				976555F0169A390900EC6EB7 /* icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -141,11 +141,7 @@
     return self;
     }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    return 1;
-}
+
 
 - (void)viewDidLoad
     {

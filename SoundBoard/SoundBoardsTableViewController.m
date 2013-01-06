@@ -295,4 +295,17 @@
      */
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    SoundBoardGroup *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    // be somewhat generic here (slightly advanced usage)
+    // we'll segue to ANY view controller that has a photographer @property
+    if ([segue.destinationViewController respondsToSelector:@selector(setGroup:)]) {
+        // use performSelector:withObject: to send without compiler checking
+        // (which is acceptable here because we used introspection to be sure this is okay)
+        [segue.destinationViewController performSelector:@selector(setGroup:) withObject:group];
+    }
+}
+
 @end

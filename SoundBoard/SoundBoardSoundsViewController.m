@@ -82,6 +82,7 @@
         //[newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
         }
+        
     }
 
 /*- (IBAction)playSound:(id)sender

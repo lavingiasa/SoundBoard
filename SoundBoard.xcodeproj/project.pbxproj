@@ -32,6 +32,7 @@
 		976CFDEA168FC3AD00D11FE8 /* SoundBoardGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */; };
 		97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9EE2E169A563200EE8FBA /* SoundButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		97B9EE31169A586000EE8FBA /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE30169A586000EE8FBA /* thumb.png */; };
+		97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
 		97B9EE2E169A563200EE8FBA /* SoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundButton.m; sourceTree = "<group>"; };
 		97B9EE30169A586000EE8FBA /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb.png; path = ../thumb.png; sourceTree = "<group>"; };
+		97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "matches-1.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
 				97B9EE30169A586000EE8FBA /* thumb.png */,
 				976555EF169A390900EC6EB7 /* icon2.png */,
 				976555EC169A38D600EC6EB7 /* icon.png */,
@@ -235,6 +238,7 @@
 				976555ED169A38D600EC6EB7 /* icon.png in Resources */,
 				976555F0169A390900EC6EB7 /* icon2.png in Resources */,
 				97B9EE31169A586000EE8FBA /* thumb.png in Resources */,
+				97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

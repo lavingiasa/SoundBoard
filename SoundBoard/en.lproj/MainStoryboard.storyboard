@@ -67,7 +67,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RfL-qW-VIh">
-                        <barButtonItem key="leftBarButtonItem" title="Something" id="WzW-rW-nLx"/>
+                        <barButtonItem key="rightBarButtonItem" title="Something" id="WzW-rW-nLx"/>
                     </navigationItem>
                     <connections>
                         <outlet property="scroller" destination="sO5-Fz-bYc" id="Ypn-zq-1wb"/>

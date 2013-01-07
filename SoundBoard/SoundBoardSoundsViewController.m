@@ -16,12 +16,13 @@
 @implementation SoundBoardSoundsViewController
 
 @synthesize board = _board;
+
 - (NSArray*) getSoundsFromGroup
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
-    request.predicate = [NSPredicate predicateWithFormat:@"title = %@", self.board.title];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSLog(@"%@",self.board.title);
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.predicate = [NSPredicate predicateWithFormat:@"partOf = %@", self.board];
     
     NSError *error = nil;
     NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];

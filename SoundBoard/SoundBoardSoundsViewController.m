@@ -88,10 +88,13 @@
 - (IBAction)playSound:(id)sender
     {
     //AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    AVAudioPlayer* audio = [[AVAudioPlayer alloc] initWithData:[sender sound] error:nil];
+    NSArray *sounds = [[NSArray alloc] init];
+    sounds = [self getSoundsFromGroup];
+    NSLog(@"sender object description %@", sender);
+    AVAudioPlayer* audio = [[AVAudioPlayer alloc] initWithData:[sounds[2] sound] error:nil];
     audio.delegate = self;
     [audio play];
- 
+        
     //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
  
     }

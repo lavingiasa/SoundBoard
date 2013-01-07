@@ -32,8 +32,9 @@
     //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
     button.image = [UIImage imageNamed:@"thumb.png"];
     
-    NSData *data = [NSData dataWithContentsOfFile:@"matches-1.mp3"];
-    button.sound = data;
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
+    NSData *myData = [NSData dataWithContentsOfFile:filePath];
+    button.sound = myData;
     
     return button;
 }

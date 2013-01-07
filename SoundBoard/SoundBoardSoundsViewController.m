@@ -93,8 +93,10 @@
     sounds = [self getSoundsFromGroup];
     int buttonNumber = [sender tag];
     NSLog(@"sender object tag %d", buttonNumber);
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
-    theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+    NSLog(@"sound %@", [sounds[buttonNumber] sound]);
+    theAudio = [[AVAudioPlayer alloc] initWithData:[sounds[buttonNumber] sound] error:NULL];
+    //NSString * path = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
+    //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
     theAudio.delegate = self;
     [theAudio play];
         

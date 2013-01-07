@@ -5,13 +5,13 @@
         <relationship name="contains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SoundButton" inverseName="partOf" inverseEntity="SoundButton" syncable="YES"/>
     </entity>
     <entity name="SoundButton" representedClassName="SoundButton" syncable="YES">
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="sound" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="partOf" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SoundBoardGroup" inverseName="contains" inverseEntity="SoundBoardGroup" syncable="YES"/>
     </entity>
     <elements>
         <element name="SoundBoardGroup" positionX="925" positionY="-54" width="128" height="73"/>
-        <element name="SoundButton" positionX="621" positionY="54" width="128" height="103"/>
+        <element name="SoundButton" positionX="621" positionY="54" width="128" height="105"/>
     </elements>
 </model>

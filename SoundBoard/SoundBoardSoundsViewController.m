@@ -73,10 +73,11 @@
         int y = 30 + (60 * ( (int) i / 5 ) );
         newButton.center = CGPointMake(x, y);
         
-        [[newButton layer] setBorderWidth:.5f];
-        [[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
+        //[[newButton layer] setBorderWidth:.5f];
+        //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
         
-        [newButton setBackgroundColor: [UIColor redColor]];
+        //[newButton setBackgroundColor: [UIColor redColor]];
+        [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
         //[newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];

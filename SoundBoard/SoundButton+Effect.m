@@ -30,6 +30,7 @@
     button.title = title;
     button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
     //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
+    button.image = [UIImage imageNamed:@"thumb.png"];
     
     return button;
 }

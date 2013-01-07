@@ -18,6 +18,13 @@
 //@synthesize soundsArray = _soundsArray;
 @synthesize test = _test;
 @synthesize test2 = _test2;
+@synthesize test3 = _test3;
+@synthesize test4 = _test4;
+@synthesize test5 = _test5;
+@synthesize test6 = _test6;
+@synthesize test7 = _test7;
+@synthesize test8 = _test8;
+@synthesize test9 = _test9;
 @synthesize numTimesOpened = _numTimesOpened;
 
 
@@ -67,11 +74,33 @@
 
 - (void)addSampleData
     {
-    //Item * items = [[Item alloc]initWithEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:context]insertIntoManagedObjectContext:context];
     self.test = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    //_soundsArray = [[NSMutableArray alloc] initWithObjects:_test, nil];
+        
+        self.test2 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test2 editSoundsButton:_test2 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test2 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        
+        self.test3 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test3 editSoundsButton:_test3 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test3 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        
+        self.test4 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test4 editSoundsButton:_test4 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test4 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        
+        self.test5 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test5 editSoundsButton:_test5 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test5 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        
+        self.test6 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test6 editSoundsButton:_test6 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test6 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        
+        self.test7 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test7 editSoundsButton:_test7 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [self addToDoc:_test7 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     }
 
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document

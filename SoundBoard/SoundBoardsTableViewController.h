@@ -20,6 +20,13 @@
 //@property (nonatomic, strong) NSMutableArray *soundsArray;
 @property (nonatomic, strong) SoundButton *test;
 @property (nonatomic, strong) SoundButton *test2;
+@property (nonatomic, strong) SoundButton *test3;
+@property (nonatomic, strong) SoundButton *test4;
+@property (nonatomic, strong) SoundButton *test5;
+@property (nonatomic, strong) SoundButton *test6;
+@property (nonatomic, strong) SoundButton *test7;
+@property (nonatomic, strong) SoundButton *test8;
+@property (nonatomic, strong) SoundButton *test9;
 @property (nonatomic, strong) NSNumber *numTimesOpened;
 
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;

@@ -25,8 +25,9 @@
     
     NSError *error = nil;
     NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
+    NSLog(@"%i", [sounds count]);
     return sounds;
-}
+    }
 
 - (void)setGroup:(SoundBoardGroup *)board
     {
@@ -47,7 +48,41 @@
     return self;
     }
 
-/*- (IBAction)playSound1:(id)sender
+-(void)viewWillAppear:(BOOL)animated
+    {
+    [super viewWillAppear:animated];
+    int temp = 0;
+    
+    NSArray *sounds = [[NSArray alloc] init];
+    sounds = [self getSoundsFromGroup];
+    
+    if(([sounds count] % 5) != 0)
+        {
+        temp = 60;
+        }
+        
+    scroller.contentSize = CGSizeMake(320, (60 * ([sounds count] / 5) + temp));
+    scroller.delaysContentTouches = YES;
+    
+    for(int i = 0; i < [sounds count]; i++)
+        {
+        UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        newButton.frame = CGRectMake(20.0, 20.0, 45.0, 45.0);
+        int x = 40 + (60 * ( i % 5 ) );
+        int y = 30 + (60 * ( (int) i / 5 ) );
+        newButton.center = CGPointMake(x, y);
+        
+        [[newButton layer] setBorderWidth:.5f];
+        [[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
+        
+        [newButton setBackgroundColor: [UIColor redColor]];
+        [newButton setTag:i];
+        //[newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
+        [scroller addSubview:newButton];
+        }
+    }
+
+/*- (IBAction)playSound:(id)sender
     {
     NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
     AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];

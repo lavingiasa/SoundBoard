@@ -79,24 +79,23 @@
         //[newButton setBackgroundColor: [UIColor redColor]];
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
-        //[newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
+        [newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
         }
         
     }
 
-/*- (IBAction)playSound:(id)sender
+- (IBAction)playSound:(id)sender
     {
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
-    AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
-    
-    theAudio.delegate = self;
-    [theAudio play];
+    //AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
+    AVAudioPlayer* audio = [[AVAudioPlayer alloc] initWithData:[sender sound] error:nil];
+    audio.delegate = self;
+    [audio play];
  
     //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
  
     }
-*/
+
 
 - (void)viewDidLoad
     {

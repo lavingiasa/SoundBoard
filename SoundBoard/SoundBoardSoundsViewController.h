@@ -19,6 +19,8 @@
     }
 
 @property (nonatomic, strong) SoundBoardGroup *board;
+@property(nonatomic, strong) AVAudioPlayer* theAudio;
+
 
 
 @end

@@ -16,6 +16,8 @@
 @implementation SoundBoardSoundsViewController
 
 @synthesize board = _board;
+@synthesize theAudio;
+
 
 - (NSArray*) getSoundsFromGroup
 {
@@ -87,13 +89,20 @@
 
 - (IBAction)playSound:(id)sender
     {
-    //AVAudioPlayer* theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
     NSArray *sounds = [[NSArray alloc] init];
     sounds = [self getSoundsFromGroup];
-    NSLog(@"sender object description %@", sender);
-    AVAudioPlayer* audio = [[AVAudioPlayer alloc] initWithData:[sounds[2] sound] error:nil];
-    audio.delegate = self;
-    [audio play];
+    int buttonNumber = [sender tag];
+    NSLog(@"sender object tag %d", buttonNumber);
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
+    theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+    theAudio.delegate = self;
+    [theAudio play];
+        
+        //NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
+        //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+        
+        //theAudio.delegate = self;
+        //[theAudio play];
         
     //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
  

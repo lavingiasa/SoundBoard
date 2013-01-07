@@ -99,7 +99,9 @@
     //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
     theAudio.delegate = self;
     [theAudio play];
+    sounds = NULL;
         
+
         //NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
         //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
         

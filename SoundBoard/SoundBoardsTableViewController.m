@@ -75,31 +75,31 @@
 - (void)addSampleData
     {
     self.test = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-    [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test editSoundsButton:_test WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"Rol" andImage:@"thumb"];
+        [self addToDoc:_test inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test2 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test2 editSoundsButton:_test2 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test2 editSoundsButton:_test2 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"matches-1" andImage:@"thumb"];
         [self addToDoc:_test2 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test3 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test3 editSoundsButton:_test3 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test3 editSoundsButton:_test3 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"Rol" andImage:@"thumb"];
         [self addToDoc:_test3 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test4 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test4 editSoundsButton:_test4 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test4 editSoundsButton:_test4 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"matches-1" andImage:@"thumb"];
         [self addToDoc:_test4 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test5 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test5 editSoundsButton:_test5 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test5 editSoundsButton:_test5 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"matches-1" andImage:@"thumb"];
         [self addToDoc:_test5 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test6 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test6 editSoundsButton:_test6 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test6 editSoundsButton:_test6 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"Rol" andImage:@"thumb"];
         [self addToDoc:_test6 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
         
         self.test7 = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
-        [_test7 editSoundsButton:_test7 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+        [_test7 editSoundsButton:_test7 WithTitle:@"title" andPartOf:@"Woo it works!" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:@"matches-1" andImage:@"thumb"];
         [self addToDoc:_test7 inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     }
 

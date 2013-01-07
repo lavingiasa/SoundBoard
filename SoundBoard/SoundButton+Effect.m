@@ -25,14 +25,14 @@
 
     }
 
-- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
+- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context withSound: (NSString *) sound andImage: (NSString *) image;//I don't know what file types sound and image are :P
 {
     button.title = title;
     button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
     //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
-    button.image = [UIImage imageNamed:@"thumb.png"];
+    button.image = [UIImage imageNamed:image];
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:sound ofType:@"mp3"];
     NSData *myData = [NSData dataWithContentsOfFile:filePath];
     button.sound = myData;
     

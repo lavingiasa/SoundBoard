@@ -12,7 +12,7 @@
 @interface SoundButton (Effect)
 
 - (SoundButton *) addSoundButtonWithImage:(id)image andSound:(id)sound andTitle:(NSString *) title inManagedObjectContext:(NSManagedObjectContext *) context;//I don't know what file types sound and image are :P
-- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context;//I don't know what file types sound and image are :P
+- (SoundButton *) editSoundsButton: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context withSound: (NSString *) sound andImage: (NSString *) image;//I don't know what file types sound and image are :P
 
 
 @end

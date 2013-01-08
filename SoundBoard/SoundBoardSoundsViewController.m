@@ -61,7 +61,7 @@
     
     if(([sounds count] % 4) != 0)
         {
-        temp = 57;
+        temp = 60;
         }
         
     scroller.contentSize = CGSizeMake(320, (60 * ([sounds count] / 4) + temp));
@@ -70,11 +70,18 @@
     for(int i = 0; i < [sounds count]; i++)
         {
         UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        newButton.frame= CGRectMake(20.0, 20.0, 57.0, 57.0);
-        float x = 40 + (80 * ( i % 4 ) );
-        float y = 36.8 + (80 * ( (int) i / 4 ) );
-        newButton.center = CGPointMake(x, y);
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 60, 20)];
+        newButton.frame= CGRectMake(30.0, 30.0, 60.0, 60.0);
         
+        label.text = [sounds[i] title]; //gotta get title of soundobject
+        label.font = [UIFont systemFontOfSize:10.0];
+        label.textAlignment = NSTextAlignmentCenter;
+        
+        float x = 40 + (80 * ( i % 4 ) );
+        float y = 40 + (80 * ( (int) i / 4 ) );
+        
+        newButton.center = CGPointMake(x, y);
+        label.center = CGPointMake(x, y+40);
         //[[newButton layer] setBorderWidth:.5f];
         //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
         
@@ -83,6 +90,7 @@
         [newButton setTag:i];
         [newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
+        [scroller addSubview:label];
         }
         
     }

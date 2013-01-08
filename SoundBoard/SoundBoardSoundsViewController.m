@@ -59,20 +59,20 @@
     NSArray *sounds = [[NSArray alloc] init];
     sounds = [self getSoundsFromGroup];
     
-    if(([sounds count] % 5) != 0)
+    if(([sounds count] % 4) != 0)
         {
-        temp = 60;
+        temp = 57;
         }
         
-    scroller.contentSize = CGSizeMake(320, (60 * ([sounds count] / 5) + temp));
+    scroller.contentSize = CGSizeMake(320, (60 * ([sounds count] / 4) + temp));
     scroller.delaysContentTouches = YES;
     
     for(int i = 0; i < [sounds count]; i++)
         {
         UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        newButton.frame = CGRectMake(20.0, 20.0, 45.0, 45.0);
-        int x = 40 + (60 * ( i % 5 ) );
-        int y = 30 + (60 * ( (int) i / 5 ) );
+        newButton.frame= CGRectMake(20.0, 20.0, 57.0, 57.0);
+        float x = 40 + (80 * ( i % 4 ) );
+        float y = 36.8 + (80 * ( (int) i / 4 ) );
         newButton.center = CGPointMake(x, y);
         
         //[[newButton layer] setBorderWidth:.5f];

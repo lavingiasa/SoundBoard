@@ -30,8 +30,8 @@
 		976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */; };
 		976CFDE4168FBDDE00D11FE8 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */; };
 		976CFDEA168FC3AD00D11FE8 /* SoundBoardGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */; };
+		97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B19A5E169BB72C00C0EDC1 /* thumb.png */; };
 		97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9EE2E169A563200EE8FBA /* SoundButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		97B9EE31169A586000EE8FBA /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE30169A586000EE8FBA /* thumb.png */; };
 		97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */; };
 		97B9EE39169A61AE00EE8FBA /* Rol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE38169A61AE00EE8FBA /* Rol.mp3 */; };
 /* End PBXBuildFile section */
@@ -72,9 +72,9 @@
 		976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		976CFDE8168FC3AD00D11FE8 /* SoundBoardGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardGroup.h; sourceTree = "<group>"; };
 		976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardGroup.m; sourceTree = "<group>"; };
+		97B19A5E169BB72C00C0EDC1 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
 		97B9EE2E169A563200EE8FBA /* SoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundButton.m; sourceTree = "<group>"; };
-		97B9EE30169A586000EE8FBA /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb.png; path = ../thumb.png; sourceTree = "<group>"; };
 		97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "matches-1.mp3"; sourceTree = "<group>"; };
 		97B9EE38169A61AE00EE8FBA /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rol.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,9 +163,9 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97B19A5E169BB72C00C0EDC1 /* thumb.png */,
 				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
 				97B9EE38169A61AE00EE8FBA /* Rol.mp3 */,
-				97B9EE30169A586000EE8FBA /* thumb.png */,
 				976555EF169A390900EC6EB7 /* icon2.png */,
 				976555EC169A38D600EC6EB7 /* icon.png */,
 				971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */,
@@ -240,9 +240,9 @@
 				976CFDC8168FB43300D11FE8 /* MainStoryboard.storyboard in Resources */,
 				976555ED169A38D600EC6EB7 /* icon.png in Resources */,
 				976555F0169A390900EC6EB7 /* icon2.png in Resources */,
-				97B9EE31169A586000EE8FBA /* thumb.png in Resources */,
 				97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */,
 				97B9EE39169A61AE00EE8FBA /* Rol.mp3 in Resources */,
+				97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

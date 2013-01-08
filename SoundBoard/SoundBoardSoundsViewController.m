@@ -13,6 +13,7 @@
 
 
 @interface SoundBoardSoundsViewController () <UIImagePickerControllerDelegate>
+@property (weak, nonatomic) NSTimer *recordingTimer;
 
 @end
 
@@ -20,6 +21,9 @@
 
 @synthesize board = _board;
 @synthesize theAudio;
+@synthesize imageFromCamera = _imageFromCamera;
+@synthesize audioRecorder = _audioRecorder;
+@synthesize recordingTimer = _recordingTimer;
 
 
 - (NSArray*) getSoundsFromGroup
@@ -123,6 +127,47 @@
  
     }
 
+- (void) recordSound
+{
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    NSDictionary *recordSettings = [NSDictionary
+                                    dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithInt:AVAudioQualityMin],
+                                    AVEncoderAudioQualityKey,
+                                    [NSNumber numberWithInt:16],
+                                    AVEncoderBitRateKey,
+                                    [NSNumber numberWithInt: 2],
+                                    AVNumberOfChannelsKey,
+                                    [NSNumber numberWithFloat:44100.0],
+                                    AVSampleRateKey,
+                                    nil];
+    
+    NSError *error = nil;
+    
+    _audioRecorder = [[AVAudioRecorder alloc]
+                     initWithURL:soundFileURL
+                     settings:recordSettings
+                     error:&error];
+    
+    if (error)
+    {
+        NSLog(@"error: %@", [error localizedDescription]);
+        
+    } else {
+        [_audioRecorder prepareToRecord];
+    }
+    
+    [_audioRecorder recordForDuration:3.0];
+    
+
+}
+
 
 - (IBAction)addSound:(id)sender
 {
@@ -151,11 +196,33 @@
             
         }
     }
+    
 }
+
+#define MAX_IMAGE_WIDTH 200
 
 - (void)dismissImagePicker
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (!image) image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    _imageFromCamera = image;
+    [self dismissImagePicker];
+    
+    [self recordSound];
+
+}
+
+-(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder
+                          successfully:(BOOL)flag
+{
+    NSLog(@"Done!");
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

@@ -10,10 +10,12 @@
 #import "SoundBoardsTableViewController.h"
 #import "SoundBoardGroup.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "RecordViewController.h"
 
 
 @interface SoundBoardSoundsViewController () <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) NSTimer *recordingTimer;
+
 
 @end
 
@@ -101,6 +103,13 @@
         }
         
     }
+- (void)pushRecordController
+{
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
+                                                  bundle:nil];
+    UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 - (IBAction)playSound:(id)sender
     {
@@ -165,7 +174,6 @@
     
     [_audioRecorder recordForDuration:3.0];
     
-
 }
 
 
@@ -204,6 +212,8 @@
 - (void)dismissImagePicker
 {
     [self dismissModalViewControllerAnimated:YES];
+    [self pushRecordController];
+
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker
@@ -215,8 +225,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     _imageFromCamera = image;
     [self dismissImagePicker];
     
-    [self recordSound];
-
 }
 
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder

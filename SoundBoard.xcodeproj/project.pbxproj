@@ -30,6 +30,7 @@
 		976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */; };
 		976CFDE4168FBDDE00D11FE8 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */; };
 		976CFDEA168FC3AD00D11FE8 /* SoundBoardGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */; };
+		97A1EE45169C97C70078CDBE /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A1EE44169C97C70078CDBE /* RecordViewController.m */; };
 		97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B19A5E169BB72C00C0EDC1 /* thumb.png */; };
 		97B19A6A169BCFBE00C0EDC1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */; };
 		97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9EE2E169A563200EE8FBA /* SoundButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -73,6 +74,8 @@
 		976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		976CFDE8168FC3AD00D11FE8 /* SoundBoardGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardGroup.h; sourceTree = "<group>"; };
 		976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardGroup.m; sourceTree = "<group>"; };
+		97A1EE43169C97C70078CDBE /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		97A1EE44169C97C70078CDBE /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		97B19A5E169BB72C00C0EDC1 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				9717270B1690CBD200CC4171 /* Sound.h */,
 				9717270C1690CBD200CC4171 /* Sound.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
+				97A1EE43169C97C70078CDBE /* RecordViewController.h */,
+				97A1EE44169C97C70078CDBE /* RecordViewController.m */,
 				971727101690D07D00CC4171 /* SoundBoardSoundsViewController.h */,
 				971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */,
 				976CFDDF168FBD0E00D11FE8 /* SoundBoardsTableViewController.h */,
@@ -269,6 +274,7 @@
 				971727121690D07D00CC4171 /* SoundBoardSoundsViewController.m in Sources */,
 				971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */,
 				97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */,
+				97A1EE45169C97C70078CDBE /* RecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

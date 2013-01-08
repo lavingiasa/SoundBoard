@@ -9,7 +9,10 @@
 #import "SoundBoardSoundsViewController.h"
 #import "SoundBoardsTableViewController.h"
 #import "SoundBoardGroup.h"
-@interface SoundBoardSoundsViewController ()
+#import <MobileCoreServices/MobileCoreServices.h>
+
+
+@interface SoundBoardSoundsViewController () <UIImagePickerControllerDelegate>
 
 @end
 
@@ -120,6 +123,45 @@
  
     }
 
+
+- (IBAction)addSound:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        if ([mediaTypes containsObject:(NSString *)kUTTypeImage])
+        {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
+            picker.allowsEditing = YES;
+            [self presentModalViewController:picker animated:YES];
+        }
+    }else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        if ([mediaTypes containsObject:(NSString *)kUTTypeImage]) {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
+            picker.allowsEditing = YES;
+            [self presentModalViewController:picker animated:YES];
+            
+        }
+    }
+}
+
+- (void)dismissImagePicker
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissImagePicker];
+}
 
 - (void)viewDidLoad
     {

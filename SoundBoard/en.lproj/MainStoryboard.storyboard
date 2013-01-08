@@ -41,7 +41,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="SoundBoard" id="fXu-YW-a9w">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="mnz-xr-IHP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mnz-xr-IHP"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erk-tg-2mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,7 +67,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RfL-qW-VIh">
-                        <barButtonItem key="rightBarButtonItem" title="Something" id="WzW-rW-nLx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WzW-rW-nLx">
+                            <connections>
+                                <action selector="addSound:" destination="opo-E0-vDw" id="QXx-8b-s7M"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scroller" destination="sO5-Fz-bYc" id="Ypn-zq-1wb"/>
@@ -103,6 +107,7 @@
         <class className="SoundBoardSoundsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardSoundsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="playSound:"/>
                 <relationship kind="outlet" name="scroller" candidateClass="UIScrollView"/>
             </relationships>
         </class>

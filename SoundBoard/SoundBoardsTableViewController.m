@@ -8,6 +8,7 @@
 
 #import "SoundBoardsTableViewController.h"
 
+
 @interface SoundBoardsTableViewController ()
 
 @end
@@ -78,7 +79,7 @@
 
         for (int i = 0; i < 24; i++)
         {
-            _names[i] = [NSString stringWithFormat:@"%s,%i", "test", i];
+            _names[i] = [NSString stringWithFormat:@"%s %i", "test:", i];
             _images[i] = [NSString stringWithFormat:@"%s", "thumb"];
             if (i % 2 == 0)
             {
@@ -90,7 +91,7 @@
         
         for (int i = 0; i < 24; i++)
         {
-            SoundButton * test = [self addButtonwithName: _names[i] withSound:_sounds[i] withImage:_images[i] inBoard:@"Woo it works!"];
+            SoundButton * sound = [self addButtonwithName: _names[i] withSound:_sounds[i] withImage:_images[i] inBoard:@"Woo it works!"];
         }
         
     }

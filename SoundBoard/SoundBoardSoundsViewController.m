@@ -208,6 +208,12 @@
 }
 
 #define MAX_IMAGE_WIDTH 200
+- (IBAction)psuhRec:(id)sender
+{
+    
+    [self pushRecordController];
+
+}
 
 - (void)dismissImagePicker
 {

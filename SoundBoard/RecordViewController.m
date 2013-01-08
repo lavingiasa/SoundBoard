@@ -14,7 +14,7 @@
 
 @implementation recordViewController
 
-@synthesize playButton, stopButton, recordButton;
+@synthesize playButton, stopButton, recordButton, confirmButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,6 +95,12 @@
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
     }
+}
+
+-(void) confirm
+{
+    [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
+    //[[self parentViewController] dismissModalViewControllerAnimated:YES];
 }
 -(void) playAudio
 {

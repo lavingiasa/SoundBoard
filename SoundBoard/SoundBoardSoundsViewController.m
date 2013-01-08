@@ -70,8 +70,8 @@
         {
         temp = 60;
         }
-        
-    scroller.contentSize = CGSizeMake(320, (60 * ([sounds count] / 4) + temp));
+    
+    scroller.contentSize = CGSizeMake(320, (360 * ([sounds count] / 4) + temp));
     scroller.delaysContentTouches = YES;
     
     for(int i = 0; i < [sounds count]; i++)

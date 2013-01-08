@@ -15,6 +15,9 @@
 @implementation SoundBoardsTableViewController
 
 @synthesize soundButtonDatabase = _soundButtonDatabase;
+@synthesize names = _names;
+@synthesize sounds = _sounds;
+@synthesize images = _images;
 //@synthesize soundsArray = _soundsArray;
 
 
@@ -69,31 +72,27 @@
 
 - (void)addSampleData
     {
-        SoundButton * test1 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test2 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test3 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test4 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test5 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test6 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test7 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test8 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test9 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test10 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test31 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test42 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test53 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test61 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test71 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test81 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test11 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test22 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test32 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test46 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test52 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test62 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test72 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
-        SoundButton * test82 = [self addButtonwithName: @"test" withSound:@"Rol" withImage:@"thumb" inBoard:@"Woo it works!"];
-       // SoundButton * test9 = [self addButtonwithName: @"test" withSound:@"matches-1" withImage:@"thumb" inBoard:@"Woo it works!"];
+        _names = [[NSMutableArray alloc] init];
+        _sounds = [[NSMutableArray alloc] init];
+        _images = [[NSMutableArray alloc] init];
+
+        for (int i = 0; i < 24; i++)
+        {
+            _names[i] = [NSString stringWithFormat:@"%s,%i", "test", i];
+            _images[i] = [NSString stringWithFormat:@"%s", "thumb"];
+            if (i % 2 == 0)
+            {
+                _sounds[i] = [NSString stringWithFormat:@"%s", "matches-1"];
+            }else{
+                _sounds[i] = [NSString stringWithFormat:@"%s", "Rol"];
+            }
+        }
+        
+        for (int i = 0; i < 24; i++)
+        {
+            SoundButton * test = [self addButtonwithName: _names[i] withSound:_sounds[i] withImage:_images[i] inBoard:@"Woo it works!"];
+        }
+        
     }
 
 - (SoundButton *)addButtonwithName:(NSString *) name withSound:(NSString *) sound withImage: (NSString *) image inBoard:(NSString*) board

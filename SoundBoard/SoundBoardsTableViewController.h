@@ -20,6 +20,9 @@
 //@property (nonatomic, strong) NSMutableArray *soundsArray;
 
 @property (nonatomic, strong) NSNumber *numTimesOpened;
+@property (nonatomic, strong) NSMutableArray* names;
+@property (nonatomic, strong) NSMutableArray* sounds;
+@property (nonatomic, strong) NSMutableArray* images;
 
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 

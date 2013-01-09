@@ -108,7 +108,10 @@
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self presentViewController:vc animated:YES completion:^{
+        ;//add code to add sound to the board
+        [self viewWillAppear:YES]; //not sure if this will work
+    }];
 }
 
 - (IBAction)playSound:(id)sender

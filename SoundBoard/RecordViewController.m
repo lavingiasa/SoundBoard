@@ -93,6 +93,8 @@
 {
     stopButton.enabled = NO;
     stopButton.hidden = YES;
+    [stopButton setHidden:YES];
+    stopButton.alpha = 0.0;
     playButton.enabled = YES;
     playButton.hidden = NO;
     recordButton.enabled = YES;
@@ -180,24 +182,6 @@
     stopButton = nil;
     recordButton = nil;
     playButton = nil;
-}
-- (IBAction)recordButton:(id)sender
-{
-    [self recordAudio];
-}
-
-- (IBAction)stopButton:(id)sender
-{
-    [self stop];
-}
-
-- (IBAction)playButton:(id)sender
-{
-    [self playAudio];
-}
-- (IBAction)confirmButton:(id)sender
-{
-    [self confirm];
 }
 
 @end

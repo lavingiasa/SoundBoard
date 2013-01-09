@@ -259,6 +259,14 @@
     return cell;
     }
 
+- (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image inBoard:(NSString *) board
+{
+    SoundButton * button = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:_soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    [button editSoundsButtonRecord:button WithTitle:name andPartOf:board inManagedObjectContext:self.soundButtonDatabase.managedObjectContext withSound:url andImage:image];
+    [self addToDoc:button inManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+}
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

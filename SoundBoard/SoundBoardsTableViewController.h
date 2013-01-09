@@ -16,9 +16,8 @@
 
 @interface SoundBoardsTableViewController : CoreDataTableViewController
 
-@property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
 //@property (nonatomic, strong) NSMutableArray *soundsArray;
-
+@property (nonatomic, strong) UIManagedDocument *soundButtonDatabase;
 @property (nonatomic, strong) NSNumber *numTimesOpened;
 @property (nonatomic, strong) NSMutableArray* names;
 @property (nonatomic, strong) NSMutableArray* sounds;
@@ -27,5 +26,7 @@
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 
 - (NSManagedObjectContext *) getContext;
+
+- (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image inBoard:(NSString *) board;
 
 @end

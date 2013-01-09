@@ -22,7 +22,6 @@
 @property (nonatomic, strong) SoundBoardGroup *board;
 @property (nonatomic, strong) AVAudioPlayer* theAudio;
 @property (nonatomic, strong) UIImage * imageFromCamera;
-@property (nonatomic, strong) AVAudioRecorder * audioRecorder;
 - (void)pushRecordController;
 
 

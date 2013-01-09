@@ -29,11 +29,22 @@
 {
     button.title = title;
     button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
-    //photo.whoTook = [Photographer photographerWithName:[flickrInfo objectForKey:FLICKR_PHOTO_OWNER] inManagedObjectContext:context];
     button.image = [UIImage imageNamed:image];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:sound ofType:@"mp3"];
     NSData *myData = [NSData dataWithContentsOfFile:filePath];
+    button.sound = myData;
+    
+    return button;
+}
+
+- (SoundButton *) editSoundsButtonRecord: (SoundButton *) button WithTitle:(NSString *) title andPartOf:(NSString *) partOf inManagedObjectContext:context withSound: (NSURL *) sound andImage: (UIImage *) image
+{
+    button.title = title;
+    button.partOf = [SoundBoardGroup groupWithName:partOf inManagedObjectContext:context];
+    button.image = image;
+    
+    NSData *myData = [NSData dataWithContentsOfURL:sound];
     button.sound = myData;
     
     return button;

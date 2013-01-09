@@ -24,7 +24,6 @@
 @synthesize board = _board;
 @synthesize theAudio;
 @synthesize imageFromCamera = _imageFromCamera;
-@synthesize audioRecorder = _audioRecorder;
 @synthesize recordingTimer = _recordingTimer;
 
 
@@ -109,8 +108,15 @@
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     [self presentViewController:vc animated:YES completion:^{
-        ;//add code to add sound to the board
-        [self viewWillAppear:YES]; //not sure if this will work
+        NSArray *dirPaths;
+        NSString *docsDir;
+        
+        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        docsDir = [dirPaths objectAtIndex:0];
+        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        [SoundBoardsTableViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+        //[self viewWillAppear:YES]; //not sure if this will work
     }];
 }
 

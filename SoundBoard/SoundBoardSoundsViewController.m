@@ -148,7 +148,7 @@
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
             picker.allowsEditing = YES;
-            [self presentModalViewController:picker animated:YES];
+            [self presentViewController:picker animated:YES completion:nil];
         }
     }else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
     {
@@ -159,7 +159,7 @@
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
             picker.allowsEditing = YES;
-            [self presentModalViewController:picker animated:YES];
+            [self presentViewController:picker animated:YES completion:nil];
             
         }
     }

@@ -170,11 +170,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RfL-qW-VIh">
-                        <barButtonItem key="leftBarButtonItem" title="test" id="Er8-A0-v2h">
-                            <connections>
-                                <action selector="psuhRec:" destination="opo-E0-vDw" id="wdp-yU-HlW"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WzW-rW-nLx">
                             <connections>
                                 <action selector="addSound:" destination="opo-E0-vDw" id="QXx-8b-s7M"/>

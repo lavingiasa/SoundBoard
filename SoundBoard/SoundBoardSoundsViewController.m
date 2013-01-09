@@ -217,8 +217,9 @@
 
 - (void)dismissImagePicker
 {
-    [self dismissModalViewControllerAnimated:YES];
-    [self pushRecordController];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self pushRecordController];
+    }];
 
 }
 

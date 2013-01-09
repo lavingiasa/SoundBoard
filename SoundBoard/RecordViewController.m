@@ -28,7 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     playButton.enabled = NO;
+    [playButton setHidden:YES];
     stopButton.enabled = NO;
+    [stopButton setHidden:YES];
     
     NSArray *dirPaths;
     NSString *docsDir;
@@ -78,7 +80,9 @@
     if (!audioRecorder.recording)
     {
         playButton.enabled = NO;
+        [playButton setHidden:TRUE];
         stopButton.enabled = YES;
+        [stopButton setHidden:FALSE];
         [audioRecorder record];
         
     }
@@ -86,8 +90,11 @@
 -(void)stop
 {
     stopButton.enabled = NO;
+    stopButton.hidden = YES;
     playButton.enabled = YES;
+    playButton.hidden = NO;
     recordButton.enabled = YES;
+    recordButton.hidden = NO;
     
     if (audioRecorder.recording)
     {
@@ -107,7 +114,9 @@
     if (!audioRecorder.recording)
     {
         stopButton.enabled = YES;
+        stopButton.hidden = NO;
         recordButton.enabled = NO;
+        recordButton.hidden = YES;
         
         NSError *error;
         
@@ -129,7 +138,9 @@
 (AVAudioPlayer *)player successfully:(BOOL)flag
 {
     recordButton.enabled = YES;
+    recordButton.hidden = NO;
     stopButton.enabled = NO;
+    stopButton.hidden = YES;
 }
 -(void)audioPlayerDecodeErrorDidOccur:
 (AVAudioPlayer *)player

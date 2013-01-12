@@ -23,6 +23,7 @@
 @property (nonatomic, strong) AVAudioPlayer* theAudio;
 @property (nonatomic, strong) UIImage * imageFromCamera;
 - (void)pushRecordController;
+- (NSString *) sendNameOfButton:(SoundButton *) button;
 
 
 

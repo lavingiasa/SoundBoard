@@ -115,10 +115,18 @@
         docsDir = [dirPaths objectAtIndex:0];
         NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        [SoundBoardsTableViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+        //UIViewController *currentVC = self.navigationController.visibleViewController;
+        //[(SoundBoardsTableViewController *)_view.superview addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];
+        [(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
     }];
 }
+
+- (NSString *) sendNameOfButton:(SoundButton *) button
+{
+    return button.title;
+}
+
 
 - (IBAction)playSound:(id)sender
     {

@@ -108,7 +108,9 @@
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     [self presentViewController:vc animated:YES completion:^{
-        NSArray *dirPaths;
+        
+        NSLog(@"Here!");
+       /* NSArray *dirPaths;
         NSString *docsDir;
         
         dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -117,8 +119,9 @@
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         //UIViewController *currentVC = self.navigationController.visibleViewController;
         //[(SoundBoardsTableViewController *)_view.superview addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];
-        [(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+        //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
+        */
     }];
 }
 
@@ -127,6 +130,15 @@
     return button.title;
 }
 
+- (NSString *) getTitle
+{
+    return _board.title;
+}
+
+- (UIImage *) getImage
+{
+    return _imageFromCamera;
+}
 
 - (IBAction)playSound:(id)sender
     {

@@ -24,7 +24,8 @@
 @property (nonatomic, strong) UIImage * imageFromCamera;
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;
-
+- (UIImage *) getImage;
+- (NSString *) getTitle;
 
 
 @end

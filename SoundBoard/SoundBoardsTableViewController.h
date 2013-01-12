@@ -28,5 +28,6 @@
 - (NSManagedObjectContext *) getContext;
 
 - (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image inBoard:(NSString *) board;
+- (UIManagedDocument *)getDatabase;
 
 @end

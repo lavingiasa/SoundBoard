@@ -105,6 +105,11 @@
     return button;
 }
 
+-(UIManagedDocument *)getDatabase
+    {
+    return _soundButtonDatabase;
+    }
+
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
     {
         

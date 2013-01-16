@@ -112,10 +112,11 @@
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
-    [self presentViewController:vc animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
         
         NSLog(@"Here!");
-       /* NSArray *dirPaths;
+        NSArray *dirPaths;
         NSString *docsDir;
         
         dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -123,10 +124,10 @@
         NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         //UIViewController *currentVC = self.navigationController.visibleViewController;
-        //[(SoundBoardsTableViewController *)_view.superview addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];
+        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
-        */
+        
     }];
 }
 

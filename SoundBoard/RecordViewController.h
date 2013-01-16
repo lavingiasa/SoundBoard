@@ -10,11 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface RecordViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
-{
+    {
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
+    }
 
-}
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
 @property (nonatomic, retain) IBOutlet UIButton *recordButton;
 @property (nonatomic, retain) IBOutlet UIButton *stopButton;

@@ -62,19 +62,24 @@
 -(void)viewWillAppear:(BOOL)animated
     {
     [super viewWillAppear:animated];
+    [self updateView];
+    }
+
+-(void)updateView
+    {
     int temp = 0;
-    
+    NSLog(@"Processing view");
     NSArray *sounds = [[NSArray alloc] init];
     sounds = [self getSoundsFromGroup];
-    
+        
     if(([sounds count] % 4) != 0)
         {
         temp = 60;
         }
-    
+        
     scroller.contentSize = CGSizeMake(320, (360 * ([sounds count] / 4) + temp));
     scroller.delaysContentTouches = YES;
-    
+        
     for(int i = 0; i < [sounds count]; i++)
         {
         UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -84,24 +89,24 @@
         label.text = [sounds[i] title]; //gotta get title of soundobject
         label.font = [UIFont systemFontOfSize:10.0];
         label.textAlignment = NSTextAlignmentCenter;
-        
+            
         float x = 40 + (80 * ( i % 4 ) );
         float y = 40 + (80 * ( (int) i / 4 ) );
-        
+            
         newButton.center = CGPointMake(x, y);
         label.center = CGPointMake(x, y+40);
-        //[[newButton layer] setBorderWidth:.5f];
-        //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
-        
-        //[newButton setBackgroundColor: [UIColor redColor]];
+            //[[newButton layer] setBorderWidth:.5f];
+            //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
+            
+            //[newButton setBackgroundColor: [UIColor redColor]];
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
         [newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
         [scroller addSubview:label];
         }
-        
     }
+
 - (void)pushRecordController
 {
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"

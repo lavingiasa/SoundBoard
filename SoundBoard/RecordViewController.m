@@ -113,8 +113,22 @@
 -(void) confirm
 {
     NSLog(@"Confirm");
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:^{
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    //UIViewController *currentVC = self.navigationController.visibleViewController;
+    //[(SoundBoardsTableViewController *)_view.superview addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];
+    SoundBoardSoundsViewController * parentView = (SoundBoardSoundsViewController *)[self.navigationController.viewControllers lastObject];
+    SoundBoardsTableViewController * parentParent = (SoundBoardsTableViewController *)[parentView.navigationController.viewControllers lastObject];
+    [parentParent addToDocWithName:@"Test" soundURL:soundFileURL andImage:[parentView getImage] inBoard:[parentView getTitle]];
+    //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+    //[self viewWillAppear:YES]; //not sure if this will work
+    
+    /*[self dismissViewControllerAnimated:YES completion:^{
         NSArray *dirPaths;
         NSString *docsDir;
         
@@ -128,8 +142,11 @@
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
 
-    }];
+    }];*/
     //[[self parentViewController] dismissModalViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 -(void) playAudio
 {

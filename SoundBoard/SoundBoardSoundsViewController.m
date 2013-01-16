@@ -102,15 +102,47 @@
         }
         
     }
+
+- (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
+{
+    SoundButton *button = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) {
+        // handle error
+    } else if ([matches count] == 0) {
+        button = [NSEntityDescription insertNewObjectForEntityForName:@"SoundButton" inManagedObjectContext:context];
+        button = soundButton;
+    } else {
+        button = [matches lastObject];
+    }
+    
+    return button;
+}
+
+- (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image
+{
+    SoundButton * button = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.board.managedObjectContext] insertIntoManagedObjectContext:self.board.managedObjectContext];
+    [button editSoundsButtonRecord:button WithTitle:name andPartOf:_board.title inManagedObjectContext:self.board.managedObjectContext withSound:url andImage:image];
+    [self addToDoc:button inManagedObjectContext:self.board.managedObjectContext];
+}
+
 - (void)pushRecordController
 {
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                   bundle:nil];
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
-    [self presentViewController:vc animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
         
         NSLog(@"Here!");
-       /* NSArray *dirPaths;
+        NSArray *dirPaths;
         NSString *docsDir;
         
         dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -118,10 +150,10 @@
         NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         //UIViewController *currentVC = self.navigationController.visibleViewController;
-        //[(SoundBoardsTableViewController *)_view.superview addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];
+        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
-        */
+        
     }];
 }
 

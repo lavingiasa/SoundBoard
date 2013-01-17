@@ -81,15 +81,6 @@
         //[self viewWillAppear:YES]; //not sure if this will work
         _numPick = [NSNumber numberWithInt:5];
     }
-        
-        
-        
-        
-        
-        
-        
-        
-        
     int temp = 0;
     
     NSArray *sounds = [[NSArray alloc] init];
@@ -286,8 +277,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)viewDidLoad
     {
     [super viewDidLoad];
+    UILongPressGestureRecognizer *holdGestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                              initWithTarget:self
+                                                              action:@selector(handleHold:)];
+    [self.view addGestureRecognizer:holdGestureRecognizer];
+    
 	// Do any additional setup after loading the view.
     }
+
+- (void)handleHold:(UILongPressGestureRecognizer *)recognizer
+{
+    NSLog(@"Test");
+}
 
 - (void)didReceiveMemoryWarning
     {

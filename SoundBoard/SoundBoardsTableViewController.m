@@ -175,6 +175,10 @@
 - (void)viewDidLoad
     {
     [super viewDidLoad];
+    //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom Title"
+    //                                                                             style:UIBarButtonItemStyleBordered
+     //                                                                           target:nil
+      //                                                                          action:nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -343,6 +347,8 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     SoundBoardGroup *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Groups" style:UIBarButtonItemStyleBordered target:nil action:nil];
+
     // be somewhat generic here (slightly advanced usage)
     // we'll segue to ANY view controller that has a photographer @property
     if ([segue.destinationViewController respondsToSelector:@selector(setGroup:)]) {

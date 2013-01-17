@@ -25,6 +25,7 @@
 @synthesize theAudio;
 @synthesize imageFromCamera = _imageFromCamera;
 @synthesize recordingTimer = _recordingTimer;
+@synthesize numPick = _numPick;
 
 
 - (NSArray*) getSoundsFromGroup
@@ -62,6 +63,33 @@
 -(void)viewWillAppear:(BOOL)animated
     {
     [super viewWillAppear:animated];
+    
+        
+    if ([_numPick integerValue] == 3)
+    {
+        NSLog(@"Here!");
+        NSArray *dirPaths;
+        NSString *docsDir;
+        
+        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        docsDir = [dirPaths objectAtIndex:0];
+        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        //UIViewController *currentVC = self.navigationController.visibleViewController;
+        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
+        //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+        //[self viewWillAppear:YES]; //not sure if this will work
+        _numPick = [NSNumber numberWithInt:5];
+    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     int temp = 0;
     
     NSArray *sounds = [[NSArray alloc] init];
@@ -140,6 +168,10 @@
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
+        _numPick = [NSNumber numberWithInt:3];
+    }];
+    
+    /*[self presentViewController:nav animated:YES completion:^{
         
         NSLog(@"Here!");
         NSArray *dirPaths;
@@ -154,7 +186,7 @@
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
         
-    }];
+    }];*/
 }
 
 - (NSString *) sendNameOfButton:(SoundButton *) button

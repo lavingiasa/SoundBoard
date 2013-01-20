@@ -28,6 +28,7 @@
 @synthesize numPick = _numPick;
 
 
+
 - (NSArray*) getSoundsFromGroup
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
@@ -287,7 +288,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
-    NSLog(@"Test");
+    CGPoint tapLocation = [recognizer locationInView:self->scroller];
+    for (UIView *view in [self->scroller subviews])
+    {
+        if (CGRectContainsPoint(view.frame, tapLocation))
+        {
+            [view removeFromSuperview];
+            NSLog(@"Test");
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

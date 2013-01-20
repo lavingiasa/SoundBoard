@@ -15,7 +15,7 @@
 
 @interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
     {
-    IBOutlet UIScrollView *scroller;
+        IBOutlet UIScrollView *scroller;
 
     }
 

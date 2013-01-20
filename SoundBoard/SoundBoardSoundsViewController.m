@@ -26,6 +26,8 @@
 @synthesize imageFromCamera = _imageFromCamera;
 @synthesize recordingTimer = _recordingTimer;
 @synthesize numPick = _numPick;
+@synthesize fetchRequest = _fetchRequest;
+@synthesize fetchedController = _fetchedController;
 
 
 
@@ -35,9 +37,14 @@
     NSLog(@"%@",self.board.title);
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = [NSPredicate predicateWithFormat:@"partOf = %@", self.board];
-    
+    _fetchRequest = request;
+
+    _fetchedController = [[NSFetchedResultsController alloc] initWithFetchRequest:_fetchRequest managedObjectContext:self.board.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+
+
     NSError *error = nil;
-    NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:_fetchRequest error:&error];
     NSLog(@"%i", [sounds count]);
     return sounds;
     }
@@ -293,7 +300,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
+            NSInteger myInt = view.tag;
+            NSIndexPath * indexPath = [[NSIndexPath alloc] initWithIndex:(NSUInteger)myInt];
+            [self.board.managedObjectContext deleteObject:[self.fetchedController objectAtIndexPath:indexPath]];
             [view removeFromSuperview];
+            
             NSLog(@"Test");
         }
     }

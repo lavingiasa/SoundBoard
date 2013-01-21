@@ -15,7 +15,7 @@
 
 @interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
     {
-    IBOutlet UIScrollView *scroller;
+        IBOutlet UIScrollView *scroller;
 
     }
 
@@ -27,6 +27,7 @@
 - (NSString *) sendNameOfButton:(SoundButton *) button;
 - (UIImage *) getImage;
 - (NSString *) getTitle;
+- (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image;
 
 
 @end

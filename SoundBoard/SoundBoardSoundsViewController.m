@@ -25,6 +25,10 @@
 @synthesize theAudio;
 @synthesize imageFromCamera = _imageFromCamera;
 @synthesize recordingTimer = _recordingTimer;
+@synthesize numPick = _numPick;
+@synthesize fetchRequest = _fetchRequest;
+@synthesize fetchedController = _fetchedController;
+
 
 
 - (NSArray*) getSoundsFromGroup
@@ -33,9 +37,14 @@
     NSLog(@"%@",self.board.title);
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = [NSPredicate predicateWithFormat:@"partOf = %@", self.board];
-    
+    _fetchRequest = request;
+
+    _fetchedController = [[NSFetchedResultsController alloc] initWithFetchRequest:_fetchRequest managedObjectContext:self.board.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+
+
     NSError *error = nil;
-    NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *sounds = [self.board.managedObjectContext executeFetchRequest:_fetchRequest error:&error];
     NSLog(@"%i", [sounds count]);
     return sounds;
     }
@@ -114,6 +123,10 @@
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
+        _numPick = [NSNumber numberWithInt:3];
+    }];
+    
+    /*[self presentViewController:nav animated:YES completion:^{
         
         NSLog(@"Here!");
         NSArray *dirPaths;
@@ -128,7 +141,7 @@
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
         
-    }];
+    }];*/
 }
 
 - (NSString *) sendNameOfButton:(SoundButton *) button
@@ -228,8 +241,30 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)viewDidLoad
     {
     [super viewDidLoad];
+    UILongPressGestureRecognizer *holdGestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                              initWithTarget:self
+                                                              action:@selector(handleHold:)];
+    [self.view addGestureRecognizer:holdGestureRecognizer];
+    
 	// Do any additional setup after loading the view.
     }
+
+- (void)handleHold:(UILongPressGestureRecognizer *)recognizer
+{
+    CGPoint tapLocation = [recognizer locationInView:self->scroller];
+    for (UIView *view in [self->scroller subviews])
+    {
+        if (CGRectContainsPoint(view.frame, tapLocation))
+        {
+            NSInteger myInt = view.tag;
+            NSIndexPath * indexPath = [[NSIndexPath alloc] initWithIndex:(NSUInteger)myInt];
+            [self.board.managedObjectContext deleteObject:[self.fetchedController objectAtIndexPath:indexPath]];
+            [view removeFromSuperview];
+            
+            NSLog(@"Test");
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning
     {

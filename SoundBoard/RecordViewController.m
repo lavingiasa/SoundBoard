@@ -36,8 +36,7 @@
     NSArray *dirPaths;
     NSString *docsDir;
     
-    dirPaths = NSSearchPathForDirectoriesInDomains(
-                                                   NSDocumentDirectory, NSUserDomainMask, YES);
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
     NSString *soundFilePath = [docsDir
                                stringByAppendingPathComponent:@"sound.caf"];
@@ -113,11 +112,25 @@
 -(void) confirm
 {
     NSLog(@"Confirm");
-    
+    /*[self dismissViewControllerAnimated:YES completion:^{
+        NSArray *dirPaths;
+        NSString *docsDir;
+        
+        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        docsDir = [dirPaths objectAtIndex:0];
+        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        
+        SoundBoardSoundsViewController * parentView = (SoundBoardSoundsViewController *)[self.navigationController.viewControllers lastObject];
+        
+        [parentView addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:[parentView imageFromCamera]];
+
+        
+    }];*/
     
     /*
      
-     NSArray *dirPaths;
+    NSArray *dirPaths;
     NSString *docsDir;
     
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

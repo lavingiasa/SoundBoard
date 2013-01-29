@@ -99,7 +99,7 @@
         temp = 83;
         }
         
-        NSLog(@"%i",[sounds count]);
+    //NSLog(@"%i",[sounds count]);
     
     scroller.contentSize = CGSizeMake(320, 83 * ([sounds count] / 4) + temp + 83);
     scroller.delaysContentTouches = YES;
@@ -125,6 +125,7 @@
         //[newButton setBackgroundColor: [UIColor redColor]];
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
+        [label setTag:i];
         [newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
         [scroller addSubview:label];
@@ -298,17 +299,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
+    float x = tapLocation.x;
+    float y = (tapLocation.y + 40);
+    
+    CGPoint labelLocation = CGPointMake(x, y);
+    
     for (UIView *view in [self->scroller subviews])
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
             NSInteger myInt = view.tag;
-            NSIndexPath * indexPath = [[NSIndexPath alloc] initWithIndex:(NSUInteger)myInt];
-            [self.board.managedObjectContext deleteObject:[self.fetchedController objectAtIndexPath:indexPath]];
+            NSArray *sounds = [[NSArray alloc] init];
+            sounds = [self getSoundsFromGroup];
+            [self.board.managedObjectContext deleteObject:sounds[myInt]];
             [view removeFromSuperview];
             
-            NSLog(@"Test");
+            for (UIView *subview in [self->scroller subviews])
+            {
+                if (subview.tag == myInt)
+                {
+                    [subview removeFromSuperview];
+                }
+            }
         }
+        
+
     }
 }
 

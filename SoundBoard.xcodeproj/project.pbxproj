@@ -30,6 +30,10 @@
 		976CFDE1168FBD0E00D11FE8 /* SoundBoardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE0168FBD0E00D11FE8 /* SoundBoardsTableViewController.m */; };
 		976CFDE4168FBDDE00D11FE8 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */; };
 		976CFDEA168FC3AD00D11FE8 /* SoundBoardGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */; };
+		9791C0E416B7B17300AD1074 /* Record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9791C0E316B7B17300AD1074 /* Record.png */; };
+		9791C0E716B7B83C00AD1074 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 9791C0E616B7B83C00AD1074 /* play.png */; };
+		9791C0E916B7B95900AD1074 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 9791C0E816B7B95900AD1074 /* stop.png */; };
+		9791C0EB16B7BAC800AD1074 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 9791C0EA16B7BAC800AD1074 /* check.png */; };
 		97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 97B19A5E169BB72C00C0EDC1 /* thumb.png */; };
 		97B19A6A169BCFBE00C0EDC1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */; };
 		97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9EE2E169A563200EE8FBA /* SoundButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -74,6 +78,10 @@
 		976CFDE3168FBDDE00D11FE8 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		976CFDE8168FC3AD00D11FE8 /* SoundBoardGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardGroup.h; sourceTree = "<group>"; };
 		976CFDE9168FC3AD00D11FE8 /* SoundBoardGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardGroup.m; sourceTree = "<group>"; };
+		9791C0E316B7B17300AD1074 /* Record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Record.png; sourceTree = "<group>"; };
+		9791C0E616B7B83C00AD1074 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		9791C0E816B7B95900AD1074 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		9791C0EA16B7BAC800AD1074 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		97B19A5E169BB72C00C0EDC1 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
@@ -172,6 +180,10 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9791C0EA16B7BAC800AD1074 /* check.png */,
+				9791C0E816B7B95900AD1074 /* stop.png */,
+				9791C0E616B7B83C00AD1074 /* play.png */,
+				9791C0E316B7B17300AD1074 /* Record.png */,
 				97B19A5E169BB72C00C0EDC1 /* thumb.png */,
 				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
 				97B9EE38169A61AE00EE8FBA /* Rol.mp3 */,
@@ -252,6 +264,10 @@
 				97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */,
 				97B9EE39169A61AE00EE8FBA /* Rol.mp3 in Resources */,
 				97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */,
+				9791C0E416B7B17300AD1074 /* Record.png in Resources */,
+				9791C0E716B7B83C00AD1074 /* play.png in Resources */,
+				9791C0E916B7B95900AD1074 /* stop.png in Resources */,
+				9791C0EB16B7BAC800AD1074 /* check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

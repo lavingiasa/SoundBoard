@@ -96,10 +96,12 @@
     
     if(([sounds count] % 4) != 0)
         {
-        temp = 60;
+        temp = 83;
         }
+        
+        NSLog(@"%i",[sounds count]);
     
-    scroller.contentSize = CGSizeMake(320, (360 * ([sounds count] / 4) + temp));
+    scroller.contentSize = CGSizeMake(320, 83 * ([sounds count] / 4) + temp + 83);
     scroller.delaysContentTouches = YES;
     
     for(int i = 0; i < [sounds count]; i++)
@@ -113,7 +115,7 @@
         label.textAlignment = NSTextAlignmentCenter;
         
         float x = 40 + (80 * ( i % 4 ) );
-        float y = 40 + (80 * ( (int) i / 4 ) );
+        float y = 83 + (80 * ( (int) i / 4 ) );
         
         newButton.center = CGPointMake(x, y);
         label.center = CGPointMake(x, y+40);

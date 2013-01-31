@@ -25,9 +25,9 @@
 @synthesize theAudio;
 @synthesize imageFromCamera = _imageFromCamera;
 @synthesize recordingTimer = _recordingTimer;
-@synthesize numPick = _numPick;
 @synthesize fetchRequest = _fetchRequest;
 @synthesize fetchedController = _fetchedController;
+@synthesize soundName = _soundName;
 
 
 
@@ -68,6 +68,31 @@
     return self;
     }
 
+- (void)askerViewController:(RecordViewController *)sender
+             didAskQuestion:(NSString *)question
+               andGotAnswer:(NSString *)answer
+                  withSound:(AVAudioPlayer *) player
+{
+    _soundName = answer;
+    audioPlayer = player;
+    
+    
+    NSLog(@"Here!");
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    //UIViewController *currentVC = self.navigationController.visibleViewController;
+    [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
+    //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+    //[self viewWillAppear:YES]; //not sure if this will work 
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)viewWillAppear:(BOOL)animated
     {
     [super viewWillAppear:animated];
@@ -83,7 +108,7 @@
         
     if(([sounds count] % 4) != 0)
         {
-        temp = 60;
+        temp = 83;
         }
         
     scroller.contentSize = CGSizeMake(320, (360 * ([sounds count] / 4) + temp));
@@ -110,6 +135,7 @@
             //[newButton setBackgroundColor: [UIColor redColor]];
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
+        [label setTag:i];
         [newButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchUpInside];
         [scroller addSubview:newButton];
         [scroller addSubview:label];
@@ -123,7 +149,10 @@
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
-        _numPick = [NSNumber numberWithInt:3];
+        RecordViewController *asker = (RecordViewController *)vc;
+        asker.question = @"Sound Button Title?";
+        asker.answer = @"Sample Answer!";
+        asker.delegate = self;
     }];
     
     /*[self presentViewController:nav animated:YES completion:^{
@@ -252,17 +281,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
+    float x = tapLocation.x;
+    float y = (tapLocation.y + 40);
+    
+    CGPoint labelLocation = CGPointMake(x, y);
+    
     for (UIView *view in [self->scroller subviews])
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
             NSInteger myInt = view.tag;
-            NSIndexPath * indexPath = [[NSIndexPath alloc] initWithIndex:(NSUInteger)myInt];
-            [self.board.managedObjectContext deleteObject:[self.fetchedController objectAtIndexPath:indexPath]];
+            NSArray *sounds = [[NSArray alloc] init];
+            sounds = [self getSoundsFromGroup];
+            [self.board.managedObjectContext deleteObject:sounds[myInt]];
             [view removeFromSuperview];
             
-            NSLog(@"Test");
+            for (UIView *subview in [self->scroller subviews])
+            {
+                if (subview.tag == myInt)
+                {
+                    [subview removeFromSuperview];
+                }
+            }
         }
+        
+
     }
 }
 

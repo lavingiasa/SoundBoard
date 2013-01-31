@@ -12,6 +12,6 @@
     </entity>
     <elements>
         <element name="SoundBoardGroup" positionX="925" positionY="-54" width="128" height="73"/>
-        <element name="SoundButton" positionX="621" positionY="54" width="128" height="105"/>
+        <element name="SoundButton" positionX="621" positionY="54" width="128" height="120"/>
     </elements>
 </model>

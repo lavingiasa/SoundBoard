@@ -9,13 +9,20 @@
 #import "RecordViewController.h"
 #import "SoundBoardSoundsViewController.h"
 
-@interface RecordViewController ()
+@interface RecordViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *answerTextField;
 
 @end
 
 @implementation RecordViewController
 
 @synthesize playButton, stopButton, recordButton, confirmButton;
+@synthesize questionLabel = _questionLabel;
+@synthesize question = _question;
+@synthesize answer = _answer;
+@synthesize answerTextField = _answerTextField;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +35,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.questionLabel.text = self.question;
+    self.answerTextField.placeholder = self.answer;
+    self.answerTextField.delegate = self;
+    
     playButton.enabled = NO;
     [playButton setHidden:YES];
     stopButton.enabled = NO;
@@ -68,6 +80,36 @@
         
     } else {
         [audioRecorder prepareToRecord];
+    }
+}
+
+- (void)setQuestion:(NSString *)question
+{
+    _question = question;
+    self.questionLabel.text = question;
+}
+
+- (void)setAnswer:(NSString *)answer
+{
+    _answer = answer;
+    self.answerTextField.placeholder = answer;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.answer = textField.text;
+    if (![textField.text length]) {
+        [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField.text length]) {
+        [textField resignFirstResponder];
+        return YES;
+    } else {
+        return NO;
     }
 }
 
@@ -165,10 +207,17 @@
     //[[self parentViewController] dismissModalViewControllerAnimated:YES];
     
     
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate askerViewController:self didAskQuestion:self.question andGotAnswer:self.answer withSound:audioPlayer];
 
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.answerTextField becomeFirstResponder];
+}
+
+
 -(void) playAudio
 {
     if (!audioRecorder.recording)
@@ -231,11 +280,14 @@
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    [self setQuestionLabel:nil];
+    [self setAnswerTextField:nil];
     audioPlayer = nil;
     audioRecorder = nil;
     stopButton = nil;
     recordButton = nil;
     playButton = nil;
+    [super viewDidUnload];
 }
 
 @end

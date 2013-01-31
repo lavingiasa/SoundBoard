@@ -207,7 +207,7 @@
     //[[self parentViewController] dismissModalViewControllerAnimated:YES];
     
     
-    [self.delegate askerViewController:self didAskQuestion:self.question andGotAnswer:self.answer];
+    [self.delegate askerViewController:self didAskQuestion:self.question andGotAnswer:self.answer withSound:audioPlayer];
 
 }
 

@@ -171,7 +171,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scroller" destination="sO5-Fz-bYc" id="Ypn-zq-1wb"/>
-                        <segue destination="uV8-yi-Qt0" kind="modal" identifier="goToRecord" id="io9-yO-ILJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZW-8m-RrP" userLabel="First Responder" sceneMemberID="firstResponder"/>

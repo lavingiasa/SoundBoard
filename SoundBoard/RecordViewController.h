@@ -15,7 +15,8 @@
 
 - (void)askerViewController:(RecordViewController *)sender
              didAskQuestion:(NSString *)question
-               andGotAnswer:(NSString *)answer;
+               andGotAnswer:(NSString *)answer
+                  withSound:(AVAudioPlayer *) player;
 
 @end
 

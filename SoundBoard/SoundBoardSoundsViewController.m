@@ -25,7 +25,6 @@
 @synthesize theAudio;
 @synthesize imageFromCamera = _imageFromCamera;
 @synthesize recordingTimer = _recordingTimer;
-@synthesize numPick = _numPick;
 @synthesize fetchRequest = _fetchRequest;
 @synthesize fetchedController = _fetchedController;
 @synthesize soundName = _soundName;
@@ -69,9 +68,28 @@
     return self;
     }
 
-- (void)askerViewController:(RecordViewController *)sender didAskQuestion:(NSString *)question andGotAnswer:(NSString *)answer
+- (void)askerViewController:(RecordViewController *)sender
+             didAskQuestion:(NSString *)question
+               andGotAnswer:(NSString *)answer
+                  withSound:(AVAudioPlayer *) player
 {
     _soundName = answer;
+    audioPlayer = player;
+    
+    
+    NSLog(@"Here!");
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    //UIViewController *currentVC = self.navigationController.visibleViewController;
+    [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
+    //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
+    //[self viewWillAppear:YES]; //not sure if this will work 
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -79,7 +97,7 @@
     {
     [super viewWillAppear:animated];
     
-        
+      /*
     if ([_numPick integerValue] == 3)
     {
         NSLog(@"Here!");
@@ -96,6 +114,7 @@
         //[self viewWillAppear:YES]; //not sure if this will work
         _numPick = [NSNumber numberWithInt:5];
     }
+        */
     int temp = 0;
     
     NSArray *sounds = [[NSArray alloc] init];

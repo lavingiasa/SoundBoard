@@ -196,7 +196,6 @@
     UIViewController* vc = [sb instantiateViewControllerWithIdentifier:@"RecordViewController"];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
-        _numPick = [NSNumber numberWithInt:3];
         RecordViewController *asker = (RecordViewController *)vc;
         asker.question = @"Sound Button Title?";
         asker.answer = @"Sample Answer!";

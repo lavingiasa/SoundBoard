@@ -355,7 +355,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
     }
     
-    [self viewWillAppear:YES];
 }
 
 - (void)didReceiveMemoryWarning

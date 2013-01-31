@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSNumber * numPick;
 @property (nonatomic, strong) NSFetchRequest * fetchRequest;
 @property (nonatomic, strong) NSFetchedResultsController * fetchedController;
+@property (nonatomic, strong) NSString * soundName;
 
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;

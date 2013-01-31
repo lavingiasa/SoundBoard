@@ -28,6 +28,7 @@
 @synthesize numPick = _numPick;
 @synthesize fetchRequest = _fetchRequest;
 @synthesize fetchedController = _fetchedController;
+@synthesize soundName = _soundName;
 
 
 
@@ -68,6 +69,12 @@
     return self;
     }
 
+- (void)askerViewController:(RecordViewController *)sender didAskQuestion:(NSString *)question andGotAnswer:(NSString *)answer
+{
+    _soundName = answer;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)viewWillAppear:(BOOL)animated
     {
     [super viewWillAppear:animated];
@@ -84,7 +91,7 @@
         NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         //UIViewController *currentVC = self.navigationController.visibleViewController;
-        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
+        [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
         //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
         //[self viewWillAppear:YES]; //not sure if this will work
         _numPick = [NSNumber numberWithInt:5];
@@ -171,6 +178,10 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:^{
         _numPick = [NSNumber numberWithInt:3];
+        RecordViewController *asker = (RecordViewController *)vc;
+        asker.question = @"Sound Button Title?";
+        asker.answer = @"Sample Answer!";
+        asker.delegate = self;
     }];
     
     /*[self presentViewController:nav animated:YES completion:^{

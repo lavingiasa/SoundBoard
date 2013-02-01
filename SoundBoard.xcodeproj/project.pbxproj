@@ -11,6 +11,7 @@
 		9717270F1690CE9B00CC4171 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9717270E1690CE9B00CC4171 /* AVFoundation.framework */; };
 		971727121690D07D00CC4171 /* SoundBoardSoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */; };
 		971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */; };
+		973AFDC616BB665A0064E89E /* SoundBoardAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973AFDC516BB665A0064E89E /* SoundBoardAddViewController.m */; };
 		975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA1168FF98500708212 /* SoundButton+Effect.m */; };
 		975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 975DBBA4168FFA1100708212 /* SoundBoardGroup+Create.m */; };
 		976555ED169A38D600EC6EB7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 976555EC169A38D600EC6EB7 /* icon.png */; };
@@ -50,6 +51,8 @@
 		971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardSoundsViewController.m; sourceTree = "<group>"; };
 		971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardAppDelegate.m; sourceTree = "<group>"; };
 		971727141690D0E600CC4171 /* SoundBoardAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardAppDelegate.h; sourceTree = "<group>"; };
+		973AFDC416BB665A0064E89E /* SoundBoardAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardAddViewController.h; sourceTree = "<group>"; };
+		973AFDC516BB665A0064E89E /* SoundBoardAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardAddViewController.m; sourceTree = "<group>"; };
 		975DBBA0168FF98500708212 /* SoundButton+Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundButton+Effect.h"; sourceTree = "<group>"; };
 		975DBBA1168FF98500708212 /* SoundButton+Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SoundButton+Effect.m"; sourceTree = "<group>"; };
 		975DBBA3168FFA1100708212 /* SoundBoardGroup+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundBoardGroup+Create.h"; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				97BD4AE3169CEEE7006CCF7D /* RecordViewController.h */,
 				97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
+				973AFDC416BB665A0064E89E /* SoundBoardAddViewController.h */,
+				973AFDC516BB665A0064E89E /* SoundBoardAddViewController.m */,
 				971727101690D07D00CC4171 /* SoundBoardSoundsViewController.h */,
 				971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */,
 				976CFDDF168FBD0E00D11FE8 /* SoundBoardsTableViewController.h */,
@@ -291,6 +296,7 @@
 				971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */,
 				97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */,
 				97BD4AE5169CEEE7006CCF7D /* RecordViewController.m in Sources */,
+				973AFDC616BB665A0064E89E /* SoundBoardAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,9 @@
 @property (nonatomic, strong) SoundBoardGroup *board;
 @property (nonatomic, strong) AVAudioPlayer* theAudio;
 @property (nonatomic, strong) UIImage * imageFromCamera;
+@property (nonatomic, strong) NSFetchRequest * fetchRequest;
+@property (nonatomic, strong) NSFetchedResultsController * fetchedController;
+@property (nonatomic, strong) NSString * soundName;
 
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;

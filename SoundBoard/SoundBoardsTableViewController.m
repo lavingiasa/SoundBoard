@@ -7,6 +7,7 @@
 //
 
 #import "SoundBoardsTableViewController.h"
+#import "SoundBoardAddViewController.h"
 
 
 @interface SoundBoardsTableViewController ()
@@ -95,6 +96,7 @@
         }
         
     }
+
 
 - (SoundButton *)addButtonwithName:(NSString *) name withSound:(NSString *) sound withImage: (NSString *) image inBoard:(NSString*) board
 {
@@ -353,6 +355,23 @@
         // (which is acceptable here because we used introspection to be sure this is okay)
         [segue.destinationViewController performSelector:@selector(setGroup:) withObject:group];
     }
+    
+    if ([segue.identifier hasPrefix:@"Add Board"]) {
+        SoundBoardAddViewController *asker = (SoundBoardAddViewController *)segue.destinationViewController;
+        asker.question = @"What do you want your label to say?";
+        asker.answer = @"Label Text";
+        asker.delegate = self;
+    }
+}
+
+- (void)askerViewController:(SoundBoardAddViewController *)sender didAskQuestion:(NSString *)question andGotAnswer:(NSString *)answer
+{
+    //Add more code here!
+    SoundBoardGroup * board = [[SoundBoardGroup alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundBoardGroup" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext]
+    insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
+    board.title = answer;
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

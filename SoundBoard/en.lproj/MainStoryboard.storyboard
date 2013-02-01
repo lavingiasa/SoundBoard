@@ -43,12 +43,49 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="SoundBoard" id="fXu-YW-a9w">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mnz-xr-IHP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mnz-xr-IHP">
+                            <connections>
+                                <segue destination="Jls-M9-nkV" kind="modal" identifier="Add Board" id="abR-tF-Cuh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erk-tg-2mx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-313" y="-203"/>
+        </scene>
+        <!--Sound Board Add View Controller-->
+        <scene sceneID="ioM-RA-VcR">
+            <objects>
+                <viewController id="Jls-M9-nkV" customClass="SoundBoardAddViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kSx-Y7-Thf">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a6F-2E-STH">
+                                <rect key="frame" x="20" y="45" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="9aG-2H-SGG">
+                                <rect key="frame" x="20" y="74" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="questionLabel" destination="a6F-2E-STH" id="fuV-ae-9h8"/>
+                        <outlet property="textFieldAnswer" destination="9aG-2H-SGG" id="kD3-fE-uHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moq-IZ-TZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="-1122"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="lTR-7G-b0Q">
@@ -212,6 +249,12 @@
                 <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SoundBoardAddViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardAddViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SoundBoardSoundsViewController" superclassName="UIViewController">

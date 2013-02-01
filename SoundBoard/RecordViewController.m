@@ -99,7 +99,7 @@
 {
     self.answer = textField.text;
     if (![textField.text length]) {
-        [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -189,7 +189,7 @@
     //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
     //[self viewWillAppear:YES]; //not sure if this will work
     
-    /*[self dismissViewControllerAnimated:YES completion:^{
+    [self dismissViewControllerAnimated:YES completion:^{
         NSArray *dirPaths;
         NSString *docsDir;
         

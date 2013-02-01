@@ -328,10 +328,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
-    float x = tapLocation.x;
-    float y = (tapLocation.y + 40);
+    //float x = tapLocation.x;
+    //float y = (tapLocation.y + 40);
     
-    CGPoint labelLocation = CGPointMake(x, y);
+    //CGPoint labelLocation = CGPointMake(x, y);
     
     for (UIView *view in [self->scroller subviews])
     {

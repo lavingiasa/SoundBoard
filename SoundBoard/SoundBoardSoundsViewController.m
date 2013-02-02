@@ -343,7 +343,6 @@
             
         }
     }
-    
 }
 
 - (void)dismissImagePicker
@@ -393,6 +392,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
+                                                            message:@"Are you sure you want to delete this sound"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Yes"
+                                                  otherButtonTitles:@"No",nil];
+            [alert show];
+            
+            
             NSInteger myInt = view.tag;
             NSArray *sounds = [[NSArray alloc] init];
             sounds = [self getSoundsFromGroup];
@@ -409,6 +416,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         }
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		NSLog(@"user pressed OK");
+	}
+	else {
+		NSLog(@"user pressed Cancel");
+	}
 }
 
 - (void)didReceiveMemoryWarning

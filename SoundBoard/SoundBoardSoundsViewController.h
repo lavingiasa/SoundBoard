@@ -13,7 +13,7 @@
 #import "SoundButton.h"
 
 
-@interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate, UIActionSheetDelegate>
+@interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate, UIActionSheetDelegate,UIAlertViewDelegate>
     {
         IBOutlet UIScrollView *scroller;
         AVAudioPlayer *audioPlayer;

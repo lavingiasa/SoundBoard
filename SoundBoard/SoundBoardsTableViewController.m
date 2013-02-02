@@ -371,7 +371,7 @@
     insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     board.title = answer;
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

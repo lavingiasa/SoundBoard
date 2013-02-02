@@ -30,6 +30,7 @@
 @synthesize fetchedController = _fetchedController;
 @synthesize soundName = _soundName;
 @synthesize label = _label;
+@synthesize viewToDelte = _viewToDelte;
 
 
 
@@ -392,6 +393,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
+            _viewToDelte = view;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
                                                             message:@"Are you sure you want to delete this sound"
                                                            delegate:self
@@ -400,19 +402,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             [alert show];
             
             
-            NSInteger myInt = view.tag;
-            NSArray *sounds = [[NSArray alloc] init];
-            sounds = [self getSoundsFromGroup];
-            [self.board.managedObjectContext deleteObject:sounds[myInt]];
-            [view removeFromSuperview];
-            
-            for (UIView *subview in [self->scroller subviews])
-            {
-                if (subview.tag == myInt)
-                {
-                    [subview removeFromSuperview];
-                }
-            }
         }
     }
     
@@ -420,7 +409,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
-		NSLog(@"user pressed OK");
+        NSInteger myInt = _viewToDelte.tag;
+        NSArray *sounds = [[NSArray alloc] init];
+        sounds = [self getSoundsFromGroup];
+        [self.board.managedObjectContext deleteObject:sounds[myInt]];
+        [_viewToDelte removeFromSuperview];
+        
+        for (UIView *subview in [self->scroller subviews])
+        {
+            if (subview.tag == myInt)
+            {
+                [subview removeFromSuperview];
+            }
+        }
 	}
 	else {
 		NSLog(@"user pressed Cancel");

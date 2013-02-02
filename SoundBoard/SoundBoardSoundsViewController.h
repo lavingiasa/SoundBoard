@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSFetchRequest * fetchRequest;
 @property (nonatomic, strong) NSFetchedResultsController * fetchedController;
 @property (nonatomic, strong) NSString * soundName;
+@property (nonatomic, strong) UIView* viewToDelte;
 
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;

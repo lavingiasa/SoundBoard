@@ -40,6 +40,55 @@
 		97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */; };
 		97BD4AE5169CEEE7006CCF7D /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */; };
 		97C430A016BDA0BF00EB8EED /* Rol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C4309F16BDA0BF00EB8EED /* Rol.mp3 */; };
+		97C430D716BDAC4100EB8EED /* Bear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A316BDAC4100EB8EED /* Bear.mp3 */; };
+		97C430D816BDAC4100EB8EED /* Bees.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A416BDAC4100EB8EED /* Bees.wav */; };
+		97C430D916BDAC4100EB8EED /* Bird Three.wav.au in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A516BDAC4100EB8EED /* Bird Three.wav.au */; };
+		97C430DA16BDAC4100EB8EED /* Bird Two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A616BDAC4100EB8EED /* Bird Two.wav */; };
+		97C430DB16BDAC4100EB8EED /* Bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A716BDAC4100EB8EED /* Bird.wav */; };
+		97C430DC16BDAC4100EB8EED /* Cat Two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A816BDAC4100EB8EED /* Cat Two.wav */; };
+		97C430DD16BDAC4100EB8EED /* Cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430A916BDAC4100EB8EED /* Cat.wav */; };
+		97C430DE16BDAC4100EB8EED /* Chickens.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AA16BDAC4100EB8EED /* Chickens.wav */; };
+		97C430DF16BDAC4100EB8EED /* Cow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AB16BDAC4100EB8EED /* Cow.wav */; };
+		97C430E016BDAC4100EB8EED /* Deer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AC16BDAC4100EB8EED /* Deer.mp3 */; };
+		97C430E116BDAC4100EB8EED /* Dog Two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AD16BDAC4100EB8EED /* Dog Two.wav */; };
+		97C430E216BDAC4100EB8EED /* Dog.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AE16BDAC4100EB8EED /* Dog.WAV */; };
+		97C430E316BDAC4100EB8EED /* Dolphin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430AF16BDAC4100EB8EED /* Dolphin.wav */; };
+		97C430E416BDAC4100EB8EED /* Fox.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B016BDAC4100EB8EED /* Fox.wav */; };
+		97C430E516BDAC4100EB8EED /* Geese.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B116BDAC4100EB8EED /* Geese.wav */; };
+		97C430E616BDAC4100EB8EED /* Goat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B216BDAC4100EB8EED /* Goat.wav */; };
+		97C430E716BDAC4100EB8EED /* Horse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B316BDAC4100EB8EED /* Horse.wav */; };
+		97C430E816BDAC4100EB8EED /* Monkey.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B416BDAC4100EB8EED /* Monkey.wav */; };
+		97C430E916BDAC4100EB8EED /* Owl.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B516BDAC4100EB8EED /* Owl.WAV */; };
+		97C430EA16BDAC4100EB8EED /* Pig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B616BDAC4100EB8EED /* Pig.wav */; };
+		97C430EB16BDAC4100EB8EED /* Rattlesnake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B716BDAC4100EB8EED /* Rattlesnake.wav */; };
+		97C430EC16BDAC4100EB8EED /* rooster.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B816BDAC4100EB8EED /* rooster.wav */; };
+		97C430ED16BDAC4100EB8EED /* Seagulls.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430B916BDAC4100EB8EED /* Seagulls.wav */; };
+		97C430EE16BDAC4100EB8EED /* Sheep.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 97C430BA16BDAC4100EB8EED /* Sheep.WAV */; };
+		97C430EF16BDAC4100EB8EED /* Tiger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430BB16BDAC4100EB8EED /* Tiger.wav */; };
+		97C430F016BDAC4100EB8EED /* Whale.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430BC16BDAC4100EB8EED /* Whale.wav */; };
+		97C430F116BDAC4100EB8EED /* Wolves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430BD16BDAC4100EB8EED /* Wolves.wav */; };
+		97C430F216BDAC4100EB8EED /* Breakdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430BF16BDAC4100EB8EED /* Breakdown.wav */; };
+		97C430F316BDAC4100EB8EED /* Drum Loop One.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C016BDAC4100EB8EED /* Drum Loop One.mp3 */; };
+		97C430F416BDAC4100EB8EED /* Electronic Bass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C116BDAC4100EB8EED /* Electronic Bass.wav */; };
+		97C430F516BDAC4100EB8EED /* Funky.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C216BDAC4100EB8EED /* Funky.wav */; };
+		97C430F616BDAC4100EB8EED /* Relaxed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C316BDAC4100EB8EED /* Relaxed.mp3 */; };
+		97C430F716BDAC4100EB8EED /* AK47  Cocking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C516BDAC4100EB8EED /* AK47  Cocking.wav */; };
+		97C430F816BDAC4100EB8EED /* Boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C616BDAC4100EB8EED /* Boom.wav */; };
+		97C430F916BDAC4100EB8EED /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C716BDAC4100EB8EED /* Explosion.wav */; };
+		97C430FA16BDAC4100EB8EED /* Gatling Gun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C816BDAC4100EB8EED /* Gatling Gun.wav */; };
+		97C430FB16BDAC4100EB8EED /* Gun Burst.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430C916BDAC4100EB8EED /* Gun Burst.wav */; };
+		97C430FC16BDAC4100EB8EED /* Insert Clip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430CA16BDAC4100EB8EED /* Insert Clip.mp3 */; };
+		97C430FD16BDAC4100EB8EED /* Revolver Cocking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430CB16BDAC4100EB8EED /* Revolver Cocking.wav */; };
+		97C430FE16BDAC4100EB8EED /* SMG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430CC16BDAC4100EB8EED /* SMG.mp3 */; };
+		97C430FF16BDAC4100EB8EED /* thompson.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430CD16BDAC4100EB8EED /* thompson.wav */; };
+		97C4310016BDAC4100EB8EED /* Applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430CF16BDAC4100EB8EED /* Applause.mp3 */; };
+		97C4310116BDAC4100EB8EED /* Baby Crying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D016BDAC4100EB8EED /* Baby Crying.mp3 */; };
+		97C4310216BDAC4100EB8EED /* Boo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D116BDAC4100EB8EED /* Boo.wav */; };
+		97C4310316BDAC4100EB8EED /* Child Crying.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D216BDAC4100EB8EED /* Child Crying.wav */; };
+		97C4310416BDAC4100EB8EED /* Evil Laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D316BDAC4100EB8EED /* Evil Laugh.wav */; };
+		97C4310516BDAC4100EB8EED /* Gasp.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D416BDAC4100EB8EED /* Gasp.WAV */; };
+		97C4310616BDAC4100EB8EED /* Santa's Laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D516BDAC4100EB8EED /* Santa's Laugh.wav */; };
+		97C4310716BDAC4100EB8EED /* Woman Crying.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 97C430D616BDAC4100EB8EED /* Woman Crying.WAV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,10 +135,59 @@
 		97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
 		97B9EE2E169A563200EE8FBA /* SoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundButton.m; sourceTree = "<group>"; };
-		97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "matches-1.mp3"; sourceTree = "<group>"; };
+		97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "matches-1.mp3"; path = "../matches-1.mp3"; sourceTree = "<group>"; };
 		97BD4AE3169CEEE7006CCF7D /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
-		97C4309F16BDA0BF00EB8EED /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rol.mp3; sourceTree = "<group>"; };
+		97C4309F16BDA0BF00EB8EED /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rol.mp3; path = ../Rol.mp3; sourceTree = "<group>"; };
+		97C430A316BDAC4100EB8EED /* Bear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bear.mp3; sourceTree = "<group>"; };
+		97C430A416BDAC4100EB8EED /* Bees.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bees.wav; sourceTree = "<group>"; };
+		97C430A516BDAC4100EB8EED /* Bird Three.wav.au */ = {isa = PBXFileReference; lastKnownFileType = audio.au; path = "Bird Three.wav.au"; sourceTree = "<group>"; };
+		97C430A616BDAC4100EB8EED /* Bird Two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bird Two.wav"; sourceTree = "<group>"; };
+		97C430A716BDAC4100EB8EED /* Bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bird.wav; sourceTree = "<group>"; };
+		97C430A816BDAC4100EB8EED /* Cat Two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Cat Two.wav"; sourceTree = "<group>"; };
+		97C430A916BDAC4100EB8EED /* Cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cat.wav; sourceTree = "<group>"; };
+		97C430AA16BDAC4100EB8EED /* Chickens.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chickens.wav; sourceTree = "<group>"; };
+		97C430AB16BDAC4100EB8EED /* Cow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cow.wav; sourceTree = "<group>"; };
+		97C430AC16BDAC4100EB8EED /* Deer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Deer.mp3; sourceTree = "<group>"; };
+		97C430AD16BDAC4100EB8EED /* Dog Two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Dog Two.wav"; sourceTree = "<group>"; };
+		97C430AE16BDAC4100EB8EED /* Dog.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Dog.WAV; sourceTree = "<group>"; };
+		97C430AF16BDAC4100EB8EED /* Dolphin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Dolphin.wav; sourceTree = "<group>"; };
+		97C430B016BDAC4100EB8EED /* Fox.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fox.wav; sourceTree = "<group>"; };
+		97C430B116BDAC4100EB8EED /* Geese.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Geese.wav; sourceTree = "<group>"; };
+		97C430B216BDAC4100EB8EED /* Goat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Goat.wav; sourceTree = "<group>"; };
+		97C430B316BDAC4100EB8EED /* Horse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Horse.wav; sourceTree = "<group>"; };
+		97C430B416BDAC4100EB8EED /* Monkey.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monkey.wav; sourceTree = "<group>"; };
+		97C430B516BDAC4100EB8EED /* Owl.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Owl.WAV; sourceTree = "<group>"; };
+		97C430B616BDAC4100EB8EED /* Pig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pig.wav; sourceTree = "<group>"; };
+		97C430B716BDAC4100EB8EED /* Rattlesnake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rattlesnake.wav; sourceTree = "<group>"; };
+		97C430B816BDAC4100EB8EED /* rooster.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rooster.wav; sourceTree = "<group>"; };
+		97C430B916BDAC4100EB8EED /* Seagulls.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Seagulls.wav; sourceTree = "<group>"; };
+		97C430BA16BDAC4100EB8EED /* Sheep.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sheep.WAV; sourceTree = "<group>"; };
+		97C430BB16BDAC4100EB8EED /* Tiger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tiger.wav; sourceTree = "<group>"; };
+		97C430BC16BDAC4100EB8EED /* Whale.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Whale.wav; sourceTree = "<group>"; };
+		97C430BD16BDAC4100EB8EED /* Wolves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wolves.wav; sourceTree = "<group>"; };
+		97C430BF16BDAC4100EB8EED /* Breakdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Breakdown.wav; sourceTree = "<group>"; };
+		97C430C016BDAC4100EB8EED /* Drum Loop One.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Drum Loop One.mp3"; sourceTree = "<group>"; };
+		97C430C116BDAC4100EB8EED /* Electronic Bass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Electronic Bass.wav"; sourceTree = "<group>"; };
+		97C430C216BDAC4100EB8EED /* Funky.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Funky.wav; sourceTree = "<group>"; };
+		97C430C316BDAC4100EB8EED /* Relaxed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Relaxed.mp3; sourceTree = "<group>"; };
+		97C430C516BDAC4100EB8EED /* AK47  Cocking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "AK47  Cocking.wav"; sourceTree = "<group>"; };
+		97C430C616BDAC4100EB8EED /* Boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Boom.wav; sourceTree = "<group>"; };
+		97C430C716BDAC4100EB8EED /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
+		97C430C816BDAC4100EB8EED /* Gatling Gun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gatling Gun.wav"; sourceTree = "<group>"; };
+		97C430C916BDAC4100EB8EED /* Gun Burst.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gun Burst.wav"; sourceTree = "<group>"; };
+		97C430CA16BDAC4100EB8EED /* Insert Clip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Insert Clip.mp3"; sourceTree = "<group>"; };
+		97C430CB16BDAC4100EB8EED /* Revolver Cocking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Revolver Cocking.wav"; sourceTree = "<group>"; };
+		97C430CC16BDAC4100EB8EED /* SMG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SMG.mp3; sourceTree = "<group>"; };
+		97C430CD16BDAC4100EB8EED /* thompson.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thompson.wav; sourceTree = "<group>"; };
+		97C430CF16BDAC4100EB8EED /* Applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Applause.mp3; sourceTree = "<group>"; };
+		97C430D016BDAC4100EB8EED /* Baby Crying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Baby Crying.mp3"; sourceTree = "<group>"; };
+		97C430D116BDAC4100EB8EED /* Boo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Boo.wav; sourceTree = "<group>"; };
+		97C430D216BDAC4100EB8EED /* Child Crying.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Child Crying.wav"; sourceTree = "<group>"; };
+		97C430D316BDAC4100EB8EED /* Evil Laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Evil Laugh.wav"; sourceTree = "<group>"; };
+		97C430D416BDAC4100EB8EED /* Gasp.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gasp.WAV; sourceTree = "<group>"; };
+		97C430D516BDAC4100EB8EED /* Santa's Laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Santa's Laugh.wav"; sourceTree = "<group>"; };
+		97C430D616BDAC4100EB8EED /* Woman Crying.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Woman Crying.WAV"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,13 +278,12 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				97C4309F16BDA0BF00EB8EED /* Rol.mp3 */,
+				97C430A116BDAC4100EB8EED /* Sound Effects */,
 				9791C0EA16B7BAC800AD1074 /* check.png */,
 				9791C0E816B7B95900AD1074 /* stop.png */,
 				9791C0E616B7B83C00AD1074 /* play.png */,
 				9791C0E316B7B17300AD1074 /* Record.png */,
 				97B19A5E169BB72C00C0EDC1 /* thumb.png */,
-				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
 				976555EF169A390900EC6EB7 /* icon2.png */,
 				976555EC169A38D600EC6EB7 /* icon.png */,
 				971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */,
@@ -200,6 +297,96 @@
 				976CFDC4168FB43300D11FE8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97C430A116BDAC4100EB8EED /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
+				97C4309F16BDA0BF00EB8EED /* Rol.mp3 */,
+				97C430A216BDAC4100EB8EED /* Animals */,
+				97C430BE16BDAC4100EB8EED /* Drum Kit */,
+				97C430C416BDAC4100EB8EED /* Gun */,
+				97C430CE16BDAC4100EB8EED /* People */,
+			);
+			path = "Sound Effects";
+			sourceTree = "<group>";
+		};
+		97C430A216BDAC4100EB8EED /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				97C430A316BDAC4100EB8EED /* Bear.mp3 */,
+				97C430A416BDAC4100EB8EED /* Bees.wav */,
+				97C430A516BDAC4100EB8EED /* Bird Three.wav.au */,
+				97C430A616BDAC4100EB8EED /* Bird Two.wav */,
+				97C430A716BDAC4100EB8EED /* Bird.wav */,
+				97C430A816BDAC4100EB8EED /* Cat Two.wav */,
+				97C430A916BDAC4100EB8EED /* Cat.wav */,
+				97C430AA16BDAC4100EB8EED /* Chickens.wav */,
+				97C430AB16BDAC4100EB8EED /* Cow.wav */,
+				97C430AC16BDAC4100EB8EED /* Deer.mp3 */,
+				97C430AD16BDAC4100EB8EED /* Dog Two.wav */,
+				97C430AE16BDAC4100EB8EED /* Dog.WAV */,
+				97C430AF16BDAC4100EB8EED /* Dolphin.wav */,
+				97C430B016BDAC4100EB8EED /* Fox.wav */,
+				97C430B116BDAC4100EB8EED /* Geese.wav */,
+				97C430B216BDAC4100EB8EED /* Goat.wav */,
+				97C430B316BDAC4100EB8EED /* Horse.wav */,
+				97C430B416BDAC4100EB8EED /* Monkey.wav */,
+				97C430B516BDAC4100EB8EED /* Owl.WAV */,
+				97C430B616BDAC4100EB8EED /* Pig.wav */,
+				97C430B716BDAC4100EB8EED /* Rattlesnake.wav */,
+				97C430B816BDAC4100EB8EED /* rooster.wav */,
+				97C430B916BDAC4100EB8EED /* Seagulls.wav */,
+				97C430BA16BDAC4100EB8EED /* Sheep.WAV */,
+				97C430BB16BDAC4100EB8EED /* Tiger.wav */,
+				97C430BC16BDAC4100EB8EED /* Whale.wav */,
+				97C430BD16BDAC4100EB8EED /* Wolves.wav */,
+			);
+			path = Animals;
+			sourceTree = "<group>";
+		};
+		97C430BE16BDAC4100EB8EED /* Drum Kit */ = {
+			isa = PBXGroup;
+			children = (
+				97C430BF16BDAC4100EB8EED /* Breakdown.wav */,
+				97C430C016BDAC4100EB8EED /* Drum Loop One.mp3 */,
+				97C430C116BDAC4100EB8EED /* Electronic Bass.wav */,
+				97C430C216BDAC4100EB8EED /* Funky.wav */,
+				97C430C316BDAC4100EB8EED /* Relaxed.mp3 */,
+			);
+			path = "Drum Kit";
+			sourceTree = "<group>";
+		};
+		97C430C416BDAC4100EB8EED /* Gun */ = {
+			isa = PBXGroup;
+			children = (
+				97C430C516BDAC4100EB8EED /* AK47  Cocking.wav */,
+				97C430C616BDAC4100EB8EED /* Boom.wav */,
+				97C430C716BDAC4100EB8EED /* Explosion.wav */,
+				97C430C816BDAC4100EB8EED /* Gatling Gun.wav */,
+				97C430C916BDAC4100EB8EED /* Gun Burst.wav */,
+				97C430CA16BDAC4100EB8EED /* Insert Clip.mp3 */,
+				97C430CB16BDAC4100EB8EED /* Revolver Cocking.wav */,
+				97C430CC16BDAC4100EB8EED /* SMG.mp3 */,
+				97C430CD16BDAC4100EB8EED /* thompson.wav */,
+			);
+			path = Gun;
+			sourceTree = "<group>";
+		};
+		97C430CE16BDAC4100EB8EED /* People */ = {
+			isa = PBXGroup;
+			children = (
+				97C430CF16BDAC4100EB8EED /* Applause.mp3 */,
+				97C430D016BDAC4100EB8EED /* Baby Crying.mp3 */,
+				97C430D116BDAC4100EB8EED /* Boo.wav */,
+				97C430D216BDAC4100EB8EED /* Child Crying.wav */,
+				97C430D316BDAC4100EB8EED /* Evil Laugh.wav */,
+				97C430D416BDAC4100EB8EED /* Gasp.WAV */,
+				97C430D516BDAC4100EB8EED /* Santa's Laugh.wav */,
+				97C430D616BDAC4100EB8EED /* Woman Crying.WAV */,
+			);
+			path = People;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +455,55 @@
 				9791C0E916B7B95900AD1074 /* stop.png in Resources */,
 				9791C0EB16B7BAC800AD1074 /* check.png in Resources */,
 				97C430A016BDA0BF00EB8EED /* Rol.mp3 in Resources */,
+				97C430D716BDAC4100EB8EED /* Bear.mp3 in Resources */,
+				97C430D816BDAC4100EB8EED /* Bees.wav in Resources */,
+				97C430D916BDAC4100EB8EED /* Bird Three.wav.au in Resources */,
+				97C430DA16BDAC4100EB8EED /* Bird Two.wav in Resources */,
+				97C430DB16BDAC4100EB8EED /* Bird.wav in Resources */,
+				97C430DC16BDAC4100EB8EED /* Cat Two.wav in Resources */,
+				97C430DD16BDAC4100EB8EED /* Cat.wav in Resources */,
+				97C430DE16BDAC4100EB8EED /* Chickens.wav in Resources */,
+				97C430DF16BDAC4100EB8EED /* Cow.wav in Resources */,
+				97C430E016BDAC4100EB8EED /* Deer.mp3 in Resources */,
+				97C430E116BDAC4100EB8EED /* Dog Two.wav in Resources */,
+				97C430E216BDAC4100EB8EED /* Dog.WAV in Resources */,
+				97C430E316BDAC4100EB8EED /* Dolphin.wav in Resources */,
+				97C430E416BDAC4100EB8EED /* Fox.wav in Resources */,
+				97C430E516BDAC4100EB8EED /* Geese.wav in Resources */,
+				97C430E616BDAC4100EB8EED /* Goat.wav in Resources */,
+				97C430E716BDAC4100EB8EED /* Horse.wav in Resources */,
+				97C430E816BDAC4100EB8EED /* Monkey.wav in Resources */,
+				97C430E916BDAC4100EB8EED /* Owl.WAV in Resources */,
+				97C430EA16BDAC4100EB8EED /* Pig.wav in Resources */,
+				97C430EB16BDAC4100EB8EED /* Rattlesnake.wav in Resources */,
+				97C430EC16BDAC4100EB8EED /* rooster.wav in Resources */,
+				97C430ED16BDAC4100EB8EED /* Seagulls.wav in Resources */,
+				97C430EE16BDAC4100EB8EED /* Sheep.WAV in Resources */,
+				97C430EF16BDAC4100EB8EED /* Tiger.wav in Resources */,
+				97C430F016BDAC4100EB8EED /* Whale.wav in Resources */,
+				97C430F116BDAC4100EB8EED /* Wolves.wav in Resources */,
+				97C430F216BDAC4100EB8EED /* Breakdown.wav in Resources */,
+				97C430F316BDAC4100EB8EED /* Drum Loop One.mp3 in Resources */,
+				97C430F416BDAC4100EB8EED /* Electronic Bass.wav in Resources */,
+				97C430F516BDAC4100EB8EED /* Funky.wav in Resources */,
+				97C430F616BDAC4100EB8EED /* Relaxed.mp3 in Resources */,
+				97C430F716BDAC4100EB8EED /* AK47  Cocking.wav in Resources */,
+				97C430F816BDAC4100EB8EED /* Boom.wav in Resources */,
+				97C430F916BDAC4100EB8EED /* Explosion.wav in Resources */,
+				97C430FA16BDAC4100EB8EED /* Gatling Gun.wav in Resources */,
+				97C430FB16BDAC4100EB8EED /* Gun Burst.wav in Resources */,
+				97C430FC16BDAC4100EB8EED /* Insert Clip.mp3 in Resources */,
+				97C430FD16BDAC4100EB8EED /* Revolver Cocking.wav in Resources */,
+				97C430FE16BDAC4100EB8EED /* SMG.mp3 in Resources */,
+				97C430FF16BDAC4100EB8EED /* thompson.wav in Resources */,
+				97C4310016BDAC4100EB8EED /* Applause.mp3 in Resources */,
+				97C4310116BDAC4100EB8EED /* Baby Crying.mp3 in Resources */,
+				97C4310216BDAC4100EB8EED /* Boo.wav in Resources */,
+				97C4310316BDAC4100EB8EED /* Child Crying.wav in Resources */,
+				97C4310416BDAC4100EB8EED /* Evil Laugh.wav in Resources */,
+				97C4310516BDAC4100EB8EED /* Gasp.WAV in Resources */,
+				97C4310616BDAC4100EB8EED /* Santa's Laugh.wav in Resources */,
+				97C4310716BDAC4100EB8EED /* Woman Crying.WAV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

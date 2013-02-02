@@ -20,14 +20,12 @@
 @synthesize names = _names;
 @synthesize sounds = _sounds;
 @synthesize images = _images;
-//@synthesize soundsArray = _soundsArray;
 
 
 @synthesize numTimesOpened = _numTimesOpened;
 
 
-- (void)setupFetchedResultsController // attaches an NSFetchRequest to this UITableViewController
-    {
+- (void)setupFetchedResultsController     {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundBoardGroup"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -117,48 +115,20 @@
         
     dispatch_queue_t fetchQ = dispatch_queue_create("Fetcher", NULL);
     dispatch_async(fetchQ, ^{
-        //NSArray *sounds = [Sound getSoundsArray];
         NSArray * sounds;
-       // sounds = _soundsArray;
-        [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
+        [document.managedObjectContext performBlock:^{ 
         
         for (int i = 0; i < [sounds count]; i++)
             {
             SoundButton* object = sounds[i];
             [self addToDoc:object inManagedObjectContext:document.managedObjectContext];
             }
-            // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
-            // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
-            // because if we quit the app before autosave happens, then it'll come up blank next time we run
-            // this is what it would look like (ADDED AFTER LECTURE) ...
+
             [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
-            // note that we don't do anything in the completion handler this time
         }];
     });
     }
 
-/* Some sample code
- - (void)fetchFlickrDataIntoDocument:(UIManagedDocument *)document
- {
- dispatch_queue_t fetchQ = dispatch_queue_create("Flickr fetcher", NULL);
- dispatch_async(fetchQ, ^{
- NSArray *photos = [FlickrFetcher recentGeoreferencedPhotos];
- [document.managedObjectContext performBlock:^{ // perform in the NSMOC's safe thread (main thread)
- for (NSDictionary *flickrInfo in photos) {
- [Photo photoWithFlickrInfo:flickrInfo inManagedObjectContext:document.managedObjectContext];
- // table will automatically update due to NSFetchedResultsController's observing of the NSMOC
- }
- // should probably saveToURL:forSaveOperation:(UIDocumentSaveForOverwriting)completionHandler: here!
- // we could decide to rely on UIManagedDocument's autosaving, but explicit saving would be better
- // because if we quit the app before autosave happens, then it'll come up blank next time we run
- // this is what it would look like (ADDED AFTER LECTURE) ...
- [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
- // note that we don't do anything in the completion handler this time
- }];
- });
- dispatch_release(fetchQ);
- }
- */
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -167,7 +137,6 @@
  
     if (self)
         {
-        // Custom initialization
         }
     return self;
     }
@@ -177,16 +146,7 @@
 - (void)viewDidLoad
     {
     [super viewDidLoad];
-    //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom Title"
-    //                                                                             style:UIBarButtonItemStyleBordered
-     //                                                                           target:nil
-      //                                                                          action:nil];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     }
 
 - (void) useDocument
@@ -260,10 +220,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
     
-    // ask NSFetchedResultsController for the NSMO at the row in question
     SoundBoardGroup* group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    // Then configure the cell using it ...
     cell.textLabel.text = group.title;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d sounds", [group.contains count]];
     
@@ -278,24 +236,8 @@
 }
 
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-    {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-    }*/
-
-
-// Override to support conditional editing of the table view.
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
     {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
     }
 
@@ -313,33 +255,13 @@
     }   
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-    {
-    }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -348,11 +270,7 @@
     SoundBoardGroup *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Groups" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
-    // be somewhat generic here (slightly advanced usage)
-    // we'll segue to ANY view controller that has a photographer @property
     if ([segue.destinationViewController respondsToSelector:@selector(setGroup:)]) {
-        // use performSelector:withObject: to send without compiler checking
-        // (which is acceptable here because we used introspection to be sure this is okay)
         [segue.destinationViewController performSelector:@selector(setGroup:) withObject:group];
     }
     
@@ -366,7 +284,6 @@
 
 - (void)askerViewController:(SoundBoardAddViewController *)sender didAskQuestion:(NSString *)question andGotAnswer:(NSString *)answer
 {
-    //Add more code here!
     SoundBoardGroup * board = [[SoundBoardGroup alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundBoardGroup" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext]
     insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
     board.title = answer;

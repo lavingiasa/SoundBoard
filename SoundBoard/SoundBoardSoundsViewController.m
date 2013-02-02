@@ -143,10 +143,7 @@
     docsDir = [dirPaths objectAtIndex:0];
     NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    //UIViewController *currentVC = self.navigationController.visibleViewController;
     [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
-    //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
-    //[self viewWillAppear:YES]; //not sure if this will work 
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -154,25 +151,7 @@
 -(void)viewWillAppear:(BOOL)animated
     {
     [super viewWillAppear:animated];
-    
-      /*
-    if ([_numPick integerValue] == 3)
-    {
-        NSLog(@"Here!");
-        NSArray *dirPaths;
-        NSString *docsDir;
-        
-        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
-        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        //UIViewController *currentVC = self.navigationController.visibleViewController;
-        [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
-        //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
-        //[self viewWillAppear:YES]; //not sure if this will work
-        _numPick = [NSNumber numberWithInt:5];
-    }
-        */
+
     int temp = 0;
     
     NSArray *sounds = [[NSArray alloc] init];
@@ -183,7 +162,6 @@
         temp = 83;
         }
         
-    //NSLog(@"%i",[sounds count]);
     
     scroller.contentSize = CGSizeMake(320, 83 * ([sounds count] / 4) + temp + 83);
     scroller.delaysContentTouches = YES;
@@ -203,10 +181,7 @@
         
         newButton.center = CGPointMake(x, y);
         label.center = CGPointMake(x, y+40);
-        //[[newButton layer] setBorderWidth:.5f];
-        //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
-        
-        //[newButton setBackgroundColor: [UIColor redColor]];
+
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
         [label setTag:i];
@@ -259,23 +234,7 @@
         asker.answer = @"Sample Answer!";
         asker.delegate = self;
     }];
-    
-    /*[self presentViewController:nav animated:YES completion:^{
-        
-        NSLog(@"Here!");
-        NSArray *dirPaths;
-        NSString *docsDir;
-        
-        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
-        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        //UIViewController *currentVC = self.navigationController.visibleViewController;
-        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
-        //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
-        //[self viewWillAppear:YES]; //not sure if this will work
-        
-    }];*/
+
 }
 
 - (NSString *) sendNameOfButton:(SoundButton *) button
@@ -301,20 +260,11 @@
     NSLog(@"sender object tag %d", buttonNumber);
     NSLog(@"sound %@", [sounds[buttonNumber] sound]);
     theAudio = [[AVAudioPlayer alloc] initWithData:[sounds[buttonNumber] sound] error:NULL];
-    //NSString * path = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
-    //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+   
     theAudio.delegate = self;
     [theAudio play];
     sounds = NULL;
-        
-
-        //NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
-        //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
-        
-        //theAudio.delegate = self;
-        //[theAudio play];
-        
-    //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
+   
  
     }
 
@@ -379,16 +329,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                                               action:@selector(handleHold:)];
     [self.view addGestureRecognizer:holdGestureRecognizer];
     
-	// Do any additional setup after loading the view.
     }
 
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
-    //float x = tapLocation.x;
-    //float y = (tapLocation.y + 40);
-    
-    //CGPoint labelLocation = CGPointMake(x, y);
+
     
     for (UIView *view in [self->scroller subviews])
     {
@@ -441,7 +387,6 @@ _popOpen = FALSE;
 - (void)didReceiveMemoryWarning
     {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     }
 
 @end

@@ -190,7 +190,7 @@
             <objects>
                 <viewController id="opo-E0-vDw" customClass="SoundBoardSoundsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hml-J3-6aw">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sO5-Fz-bYc">
@@ -199,13 +199,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="RfL-qW-VIh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WzW-rW-nLx">
                             <connections>
-                                <action selector="addSound:" destination="opo-E0-vDw" id="QXx-8b-s7M"/>
+                                <action selector="showActionSheet:" destination="opo-E0-vDw" id="zjt-f4-kqG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="scroller" destination="sO5-Fz-bYc" id="Ypn-zq-1wb"/>
                     </connections>
@@ -255,13 +257,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardAddViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textFieldAnswer" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="SoundBoardSoundsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SoundBoardSoundsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addSound:"/>
                 <relationship kind="action" name="playSound:"/>
+                <relationship kind="action" name="showActionSheet:"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scroller" candidateClass="UIScrollView"/>
             </relationships>
         </class>

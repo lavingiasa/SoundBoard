@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9717270D1690CBD200CC4171 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 9717270C1690CBD200CC4171 /* Sound.m */; };
 		9717270F1690CE9B00CC4171 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9717270E1690CE9B00CC4171 /* AVFoundation.framework */; };
 		971727121690D07D00CC4171 /* SoundBoardSoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */; };
 		971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */; };
@@ -44,8 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9717270B1690CBD200CC4171 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
-		9717270C1690CBD200CC4171 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 		9717270E1690CE9B00CC4171 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		971727101690D07D00CC4171 /* SoundBoardSoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBoardSoundsViewController.h; sourceTree = "<group>"; };
 		971727111690D07D00CC4171 /* SoundBoardSoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBoardSoundsViewController.m; sourceTree = "<group>"; };
@@ -163,8 +160,6 @@
 		976CFDB4168FB43300D11FE8 /* SoundBoard */ = {
 			isa = PBXGroup;
 			children = (
-				9717270B1690CBD200CC4171 /* Sound.h */,
-				9717270C1690CBD200CC4171 /* Sound.m */,
 				97BD4AE3169CEEE7006CCF7D /* RecordViewController.h */,
 				97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */,
 				976CFDC6168FB43300D11FE8 /* MainStoryboard.storyboard */,
@@ -291,7 +286,6 @@
 				976CFDEA168FC3AD00D11FE8 /* SoundBoardGroup.m in Sources */,
 				975DBBA2168FF98500708212 /* SoundButton+Effect.m in Sources */,
 				975DBBA5168FFA1100708212 /* SoundBoardGroup+Create.m in Sources */,
-				9717270D1690CBD200CC4171 /* Sound.m in Sources */,
 				971727121690D07D00CC4171 /* SoundBoardSoundsViewController.m in Sources */,
 				971727151690D0E600CC4171 /* SoundBoardAppDelegate.m in Sources */,
 				97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */,

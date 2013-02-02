@@ -15,6 +15,7 @@
 
 @interface SoundBoardSoundsViewController () <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) NSTimer *recordingTimer;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 
 @end
@@ -28,7 +29,64 @@
 @synthesize fetchRequest = _fetchRequest;
 @synthesize fetchedController = _fetchedController;
 @synthesize soundName = _soundName;
+@synthesize label = _label;
+@synthesize viewToDelte = _viewToDelte;
+@synthesize popOpen = _popOpen;
 
+
+
+
+
+- (IBAction)showActionSheet:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Where to Get Photo?" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Library", nil];
+        popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+        
+        [popupQuery showInView:self.view];
+    }else{
+        [self addSound];
+
+        
+   }
+   
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	
+     switch (buttonIndex) {
+     case 0:
+     self.label.text = @"Camera";
+             [self addSound];
+             
+             
+     break;
+     case 1:
+     self.label.text = @"Library";
+             
+         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+         {
+             NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+             if ([mediaTypes containsObject:(NSString *)kUTTypeImage]) {
+                 UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                 picker.delegate = self;
+                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                 picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
+                 picker.allowsEditing = YES;
+                 [self presentViewController:picker animated:YES completion:nil];
+                 
+             }
+         }
+     break;
+     case 2:
+     self.label.text = @"Cancel";
+     break;
+     
+     }
+     
+}
 
 
 - (NSArray*) getSoundsFromGroup
@@ -85,10 +143,7 @@
     docsDir = [dirPaths objectAtIndex:0];
     NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    //UIViewController *currentVC = self.navigationController.visibleViewController;
     [self addToDocWithName:_soundName soundURL:soundFileURL andImage:_imageFromCamera];
-    //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
-    //[self viewWillAppear:YES]; //not sure if this will work 
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -154,23 +209,7 @@
         asker.answer = @"Sample Answer!";
         asker.delegate = self;
     }];
-    
-    /*[self presentViewController:nav animated:YES completion:^{
-        
-        NSLog(@"Here!");
-        NSArray *dirPaths;
-        NSString *docsDir;
-        
-        dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = [dirPaths objectAtIndex:0];
-        NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        //UIViewController *currentVC = self.navigationController.visibleViewController;
-        [self addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera];
-        //[(SoundBoardsTableViewController *)self.parentViewController addToDocWithName:@"TestRec" soundURL:soundFileURL andImage:_imageFromCamera inBoard:_board.title];//add code to add sound to the board
-        //[self viewWillAppear:YES]; //not sure if this will work
-        
-    }];*/
+
 }
 
 - (NSString *) sendNameOfButton:(SoundButton *) button
@@ -196,24 +235,15 @@
     NSLog(@"sender object tag %d", buttonNumber);
     NSLog(@"sound %@", [sounds[buttonNumber] sound]);
     theAudio = [[AVAudioPlayer alloc] initWithData:[sounds[buttonNumber] sound] error:NULL];
-    //NSString * path = [[NSBundle mainBundle] pathForResource:@"matches-1" ofType:@"mp3"];
-    //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+   
     theAudio.delegate = self;
     [theAudio play];
     sounds = NULL;
-        
-
-        //NSString * path = [[NSBundle mainBundle] pathForResource:@"Rol" ofType:@"mp3"];
-        //theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
-        
-        //theAudio.delegate = self;
-        //[theAudio play];
-        
-    //For this method, we can add identifiers to the buttons (essentially numbers that get passed when a certain button is pressed), and these numbers that get passed through can access an array with the sound in it...cutting down time and simplifying code.
+   
  
     }
 
-- (IBAction)addSound:(id)sender
+- (void)addSound
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -240,7 +270,6 @@
             
         }
     }
-    
 }
 
 - (void)dismissImagePicker
@@ -275,45 +304,64 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                                                               action:@selector(handleHold:)];
     [self.view addGestureRecognizer:holdGestureRecognizer];
     
-	// Do any additional setup after loading the view.
     }
 
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
-    float x = tapLocation.x;
-    float y = (tapLocation.y + 40);
-    
-    CGPoint labelLocation = CGPointMake(x, y);
+
     
     for (UIView *view in [self->scroller subviews])
     {
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
-            NSInteger myInt = view.tag;
-            NSArray *sounds = [[NSArray alloc] init];
-            sounds = [self getSoundsFromGroup];
-            [self.board.managedObjectContext deleteObject:sounds[myInt]];
-            [view removeFromSuperview];
-            
-            for (UIView *subview in [self->scroller subviews])
+            _viewToDelte = view;
+            if(_popOpen == FALSE)
             {
-                if (subview.tag == myInt)
-                {
-                    [subview removeFromSuperview];
-                }
-            }
-        }
-        
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
+                                                                message:@"Are you sure you want to delete this sound"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Yes"
+                                                      otherButtonTitles:@"No",nil];
+                _popOpen = TRUE;
 
+                [alert show];
+                
+            }
+            
+            
+            
+        }
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+        NSInteger myInt = _viewToDelte.tag;
+        NSArray *sounds = [[NSArray alloc] init];
+        sounds = [self getSoundsFromGroup];
+        [self.board.managedObjectContext deleteObject:sounds[myInt]];
+        [_viewToDelte removeFromSuperview];
+        
+        for (UIView *subview in [self->scroller subviews])
+        {
+            if (subview.tag == myInt)
+            {
+                [subview removeFromSuperview];
+            }
+        }
+	}
+	else {
+		NSLog(@"user pressed Cancel");
+	}
+    
+_popOpen = FALSE;
 }
 
 - (void)didReceiveMemoryWarning
     {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     }
 
 @end

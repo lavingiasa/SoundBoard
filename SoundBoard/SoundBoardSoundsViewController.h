@@ -13,7 +13,7 @@
 #import "SoundButton.h"
 
 
-@interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate>
+@interface SoundBoardSoundsViewController : UIViewController <AVAudioPlayerDelegate, UIActionSheetDelegate,UIAlertViewDelegate>
     {
         IBOutlet UIScrollView *scroller;
         AVAudioPlayer *audioPlayer;
@@ -27,6 +27,8 @@
 @property (nonatomic, strong) NSFetchRequest * fetchRequest;
 @property (nonatomic, strong) NSFetchedResultsController * fetchedController;
 @property (nonatomic, strong) NSString * soundName;
+@property (nonatomic, strong) UIView* viewToDelte;
+@property (assign) BOOL popOpen;
 
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;

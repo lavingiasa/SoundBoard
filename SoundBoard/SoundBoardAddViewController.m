@@ -40,7 +40,7 @@
 {
     self.answer = textField.text;
     if (![textField.text length]) {
-        [[self presentingViewController] dismissModalViewControllerAnimated:YES];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.delegate askerViewController:self didAskQuestion:self.question andGotAnswer:self.answer];
     }

@@ -15,6 +15,7 @@
 
 @interface SoundBoardSoundsViewController () <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) NSTimer *recordingTimer;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 
 @end
@@ -28,7 +29,62 @@
 @synthesize fetchRequest = _fetchRequest;
 @synthesize fetchedController = _fetchedController;
 @synthesize soundName = _soundName;
+@synthesize label = _label;
 
+
+
+
+
+- (IBAction)showActionSheet:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Where to Get Photo?" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Library", nil];
+        popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+        
+        [popupQuery showInView:self.view];
+    }else{
+        [self addSound];
+
+        
+   }
+   
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	
+     switch (buttonIndex) {
+     case 0:
+     self.label.text = @"Camera";
+             [self addSound];
+             
+             
+     break;
+     case 1:
+     self.label.text = @"Library";
+             
+         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+         {
+             NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+             if ([mediaTypes containsObject:(NSString *)kUTTypeImage]) {
+                 UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                 picker.delegate = self;
+                 picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                 picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
+                 picker.allowsEditing = YES;
+                 [self presentViewController:picker animated:YES completion:nil];
+                 
+             }
+         }
+     break;
+     case 2:
+     self.label.text = @"Cancel";
+     break;
+     
+     }
+     
+}
 
 
 - (NSArray*) getSoundsFromGroup
@@ -260,7 +316,7 @@
  
     }
 
-- (IBAction)addSound:(id)sender
+- (void)addSound
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -351,8 +407,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                 }
             }
         }
-        
-
     }
     
 }

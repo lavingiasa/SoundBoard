@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSFetchedResultsController * fetchedController;
 @property (nonatomic, strong) NSString * soundName;
 @property (nonatomic, strong) UIView* viewToDelte;
+@property (assign) BOOL popOpen;
 
 - (void)pushRecordController;
 - (NSString *) sendNameOfButton:(SoundButton *) button;

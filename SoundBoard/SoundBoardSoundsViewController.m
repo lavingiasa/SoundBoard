@@ -31,6 +31,7 @@
 @synthesize soundName = _soundName;
 @synthesize label = _label;
 @synthesize viewToDelte = _viewToDelte;
+@synthesize popOpen = _popOpen;
 
 
 
@@ -394,12 +395,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         if (CGRectContainsPoint(view.frame, tapLocation))
         {
             _viewToDelte = view;
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
-                                                            message:@"Are you sure you want to delete this sound"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Yes"
-                                                  otherButtonTitles:@"No",nil];
-            [alert show];
+            if(_popOpen == FALSE)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
+                                                                message:@"Are you sure you want to delete this sound"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Yes"
+                                                      otherButtonTitles:@"No",nil];
+                _popOpen = TRUE;
+
+                [alert show];
+                
+            }
+            
             
             
         }
@@ -426,6 +434,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 	else {
 		NSLog(@"user pressed Cancel");
 	}
+    
+_popOpen = FALSE;
 }
 
 - (void)didReceiveMemoryWarning

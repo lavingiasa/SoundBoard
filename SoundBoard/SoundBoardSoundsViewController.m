@@ -166,9 +166,10 @@
         temp = 83;
         }
         
-    scroller.contentSize = CGSizeMake(320, (360 * ([sounds count] / 4) + temp));
+    
+    scroller.contentSize = CGSizeMake(320, 83 * ([sounds count] / 4) + temp + 83);
     scroller.delaysContentTouches = YES;
-        
+    
     for(int i = 0; i < [sounds count]; i++)
         {
         UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -178,16 +179,13 @@
         label.text = [sounds[i] title]; //gotta get title of soundobject
         label.font = [UIFont systemFontOfSize:10.0];
         label.textAlignment = NSTextAlignmentCenter;
-            
+        
         float x = 40 + (80 * ( i % 4 ) );
-        float y = 40 + (80 * ( (int) i / 4 ) );
-            
+        float y = 83 + (80 * ( (int) i / 4 ) );
+        
         newButton.center = CGPointMake(x, y);
         label.center = CGPointMake(x, y+40);
-            //[[newButton layer] setBorderWidth:.5f];
-            //[[newButton layer] setBorderColor:[UIColor grayColor].CGColor];
-            
-            //[newButton setBackgroundColor: [UIColor redColor]];
+
         [newButton setImage:[sounds[i] image] forState:UIControlStateNormal];
         [newButton setTag:i];
         [label setTag:i];
@@ -319,17 +317,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             if(_popOpen == FALSE)
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete?"
-                                                                message:@"Are you sure you want to delete this sound"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Yes"
-                                                      otherButtonTitles:@"No",nil];
+                message:@"Are you sure you want to delete this sound" delegate:self
+                cancelButtonTitle:@"Yes" otherButtonTitles:@"No",nil];
                 _popOpen = TRUE;
 
                 [alert show];
                 
             }
-            
-            
             
         }
     }
@@ -349,6 +343,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             if (subview.tag == myInt)
             {
                 [subview removeFromSuperview];
+                [self updateView];
             }
         }
 	}

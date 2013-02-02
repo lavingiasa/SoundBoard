@@ -38,8 +38,8 @@
 		97B19A6A169BCFBE00C0EDC1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B19A69169BCFBE00C0EDC1 /* MobileCoreServices.framework */; };
 		97B9EE2F169A563200EE8FBA /* SoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B9EE2E169A563200EE8FBA /* SoundButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */; };
-		97B9EE39169A61AE00EE8FBA /* Rol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97B9EE38169A61AE00EE8FBA /* Rol.mp3 */; };
 		97BD4AE5169CEEE7006CCF7D /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */; };
+		97C430A016BDA0BF00EB8EED /* Rol.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97C4309F16BDA0BF00EB8EED /* Rol.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,9 +87,9 @@
 		97B9EE2D169A563200EE8FBA /* SoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundButton.h; sourceTree = "<group>"; };
 		97B9EE2E169A563200EE8FBA /* SoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundButton.m; sourceTree = "<group>"; };
 		97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "matches-1.mp3"; sourceTree = "<group>"; };
-		97B9EE38169A61AE00EE8FBA /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rol.mp3; sourceTree = "<group>"; };
 		97BD4AE3169CEEE7006CCF7D /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		97BD4AE4169CEEE7006CCF7D /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		97C4309F16BDA0BF00EB8EED /* Rol.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rol.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,13 +180,13 @@
 		976CFDB5168FB43300D11FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97C4309F16BDA0BF00EB8EED /* Rol.mp3 */,
 				9791C0EA16B7BAC800AD1074 /* check.png */,
 				9791C0E816B7B95900AD1074 /* stop.png */,
 				9791C0E616B7B83C00AD1074 /* play.png */,
 				9791C0E316B7B17300AD1074 /* Record.png */,
 				97B19A5E169BB72C00C0EDC1 /* thumb.png */,
 				97B9EE32169A5B6F00EE8FBA /* matches-1.mp3 */,
-				97B9EE38169A61AE00EE8FBA /* Rol.mp3 */,
 				976555EF169A390900EC6EB7 /* icon2.png */,
 				976555EC169A38D600EC6EB7 /* icon.png */,
 				971727131690D0E600CC4171 /* SoundBoardAppDelegate.m */,
@@ -262,12 +262,12 @@
 				976555ED169A38D600EC6EB7 /* icon.png in Resources */,
 				976555F0169A390900EC6EB7 /* icon2.png in Resources */,
 				97B9EE33169A5B6F00EE8FBA /* matches-1.mp3 in Resources */,
-				97B9EE39169A61AE00EE8FBA /* Rol.mp3 in Resources */,
 				97B19A5F169BB72C00C0EDC1 /* thumb.png in Resources */,
 				9791C0E416B7B17300AD1074 /* Record.png in Resources */,
 				9791C0E716B7B83C00AD1074 /* play.png in Resources */,
 				9791C0E916B7B95900AD1074 /* stop.png in Resources */,
 				9791C0EB16B7BAC800AD1074 /* check.png in Resources */,
+				97C430A016BDA0BF00EB8EED /* Rol.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

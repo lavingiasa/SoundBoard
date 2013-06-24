@@ -24,18 +24,19 @@
 
 @synthesize delegate = _delegate;
 
+//question field
 - (void)setQuestion:(NSString *)question
 {
     _question = question;
     self.questionLabel.text = question;
 }
-
+//answer field
 - (void)setAnswer:(NSString *)answer
 {
     _answer = answer;
     self.textFieldAnswer.placeholder = answer;
 }
-
+//when the user is done editing
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.answer = textField.text;
@@ -45,7 +46,7 @@
         [self.delegate askerViewController:self didAskQuestion:self.question andGotAnswer:self.answer];
     }
 }
-
+//if there is input
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if ([textField.text length]) {

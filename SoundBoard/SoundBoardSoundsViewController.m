@@ -36,7 +36,7 @@
 
 
 
-
+//show the sheey when the add sound button is tapped
 - (IBAction)showActionSheet:(id)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -54,6 +54,7 @@
     
 }
 
+//when a button is tapped
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
      switch (buttonIndex) {
@@ -88,7 +89,7 @@
      
 }
 
-
+//get sounds in the group
 - (NSArray*) getSoundsFromGroup
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundButton"];
@@ -107,6 +108,7 @@
     return sounds;
     }
 
+//set the group for the new board
 - (void)setGroup:(SoundBoardGroup *)board
     {
     _board = board;
@@ -125,7 +127,7 @@
         }
     return self;
     }
-
+//ask the question for the controller I wrote
 - (void)askerViewController:(RecordViewController *)sender
              didAskQuestion:(NSString *)question
                andGotAnswer:(NSString *)answer
@@ -153,7 +155,7 @@
     [super viewWillAppear:animated];
     [self updateView];
     }
-
+//update the view for when a new thing is added
 -(void)updateView
     {
     int temp = 0;
@@ -195,6 +197,7 @@
         }
     }
 
+//after the image is taken it pops up the recorder
 - (void)pushRecordController
 {
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"MainStoryboard"
@@ -224,7 +227,7 @@
 {
     return _imageFromCamera;
 }
-
+//plays the sound at an index
 - (IBAction)playSound:(id)sender
     {
     NSArray *sounds = [[NSArray alloc] init];
@@ -240,7 +243,7 @@
    
  
     }
-
+//adds the sound
 - (void)addSound
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -277,7 +280,7 @@
     }];
 
 }
-
+//used to pick the image
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -303,7 +306,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [self.view addGestureRecognizer:holdGestureRecognizer];
     
     }
-
+//if its held, delete it
 - (void)handleHold:(UILongPressGestureRecognizer *)recognizer
 {
     CGPoint tapLocation = [recognizer locationInView:self->scroller];
@@ -329,7 +332,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
     
 }
-
+//askes if you really want to delete
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
         NSInteger myInt = _viewToDelte.tag;

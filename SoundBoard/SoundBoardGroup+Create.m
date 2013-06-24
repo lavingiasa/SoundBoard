@@ -9,7 +9,7 @@
 #import "SoundBoardGroup+Create.h"
 
 @implementation SoundBoardGroup (Create)
-
+//makes the group with the name in a context
 + (SoundBoardGroup *)groupWithName:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context
     {
     SoundBoardGroup * group = nil;

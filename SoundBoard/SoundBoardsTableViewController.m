@@ -24,7 +24,7 @@
 
 @synthesize numTimesOpened = _numTimesOpened;
 
-
+//get the data
 - (void)setupFetchedResultsController     {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SoundBoardGroup"];
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
@@ -38,7 +38,7 @@
 {
     return self.soundButtonDatabase.managedObjectContext;
 }
-
+//add the sound to the document in the object context
 - (SoundButton *) addToDoc:(SoundButton *)soundButton inManagedObjectContext:(NSManagedObjectContext *) context;
 {
     SoundButton *button = nil;
@@ -62,6 +62,7 @@
     return button;
 }
 
+//add the sound button
 - (SoundButton *) addSoundButton:(SoundButton *)soundButton toArray:(NSMutableArray *) array
 {
     [array addObject:soundButton];
@@ -69,7 +70,7 @@
 }
 
 
-
+//add the sample data
 - (void)addSampleData
     {
         _names = [[NSMutableArray alloc] init];
@@ -95,7 +96,7 @@
         
     }
 
-
+//add the button with sound, image, in the named board
 - (SoundButton *)addButtonwithName:(NSString *) name withSound:(NSString *) sound withImage: (NSString *) image inBoard:(NSString*) board
 {
     SoundButton * button = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:self.soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];
@@ -105,11 +106,13 @@
     return button;
 }
 
+//get the database
 -(UIManagedDocument *)getDatabase
     {
     return _soundButtonDatabase;
     }
 
+//get the data into the document
 - (void)fetchDataIntoDocument:(UIManagedDocument *)document
     {
         
@@ -148,7 +151,7 @@
     [super viewDidLoad];
     
     }
-
+//use a certain document
 - (void) useDocument
     {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.soundButtonDatabase.fileURL path]])
@@ -178,7 +181,7 @@
             
         }
     }
-
+//set the database
 - (void) setSoundButtonDatabase:(UIManagedDocument *)soundButtonDatabase
     {
     if (_soundButtonDatabase != soundButtonDatabase)
@@ -209,7 +212,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     }
-
+//set up the table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
     {
     static NSString *CellIdentifier = @"Soundboard Cell";
@@ -227,7 +230,7 @@
     
     return cell;
     }
-
+//add the name, sound, image, board into the document
 - (void) addToDocWithName: (NSString *)name soundURL:(NSURL*)url andImage:(UIImage *) image inBoard:(NSString *) board
 {
     SoundButton * button = [[SoundButton alloc] initWithEntity:[NSEntityDescription entityForName:@"SoundButton" inManagedObjectContext:_soundButtonDatabase.managedObjectContext] insertIntoManagedObjectContext:self.soundButtonDatabase.managedObjectContext];

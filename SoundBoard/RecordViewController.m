@@ -32,7 +32,7 @@
     }
     return self;
 }
-
+//sets up everything including the recording settings
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -82,19 +82,19 @@
         [audioRecorder prepareToRecord];
     }
 }
-
+//sets the question
 - (void)setQuestion:(NSString *)question
 {
     _question = question;
     self.questionLabel.text = question;
 }
-
+//sets the answer default
 - (void)setAnswer:(NSString *)answer
 {
     _answer = answer;
     self.answerTextField.placeholder = answer;
 }
-
+//if the test was done being edited then do this stuff
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.answer = textField.text;
@@ -102,7 +102,7 @@
         [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
+//if the test field has text in it
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if ([textField.text length]) {
@@ -112,7 +112,7 @@
         return NO;
     }
 }
-
+//bring up the view and set it up with the buttons
 -(void) recordAudio
 {
     UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -131,6 +131,7 @@
     
     NSLog(@"record");
 }
+//if the stop button it hit
 -(void)stop
 {
     stopButton.enabled = NO;
@@ -150,7 +151,7 @@
     }
     NSLog(@"stop");
 }
-
+//if the confirm button is clicked
 -(void) confirm
 {
     NSLog(@"Confirm");
@@ -166,7 +167,7 @@
     [self.answerTextField becomeFirstResponder];
 }
 
-
+//if the play button is clicked
 -(void) playAudio
 {
     if (!audioRecorder.recording)
@@ -193,7 +194,7 @@
     
     NSLog(@"Play");
 }
-
+//if the audio player finished playing it changes the options the user has
 -(void)audioPlayerDidFinishPlaying:
 (AVAudioPlayer *)player successfully:(BOOL)flag
 {
@@ -202,17 +203,20 @@
     stopButton.enabled = NO;
     stopButton.hidden = YES;
 }
+
 -(void)audioPlayerDecodeErrorDidOccur:
 (AVAudioPlayer *)player
                                 error:(NSError *)error
 {
     NSLog(@"Decode Error occurred");
 }
+
 -(void)audioRecorderDidFinishRecording:
 (AVAudioRecorder *)recorder
                           successfully:(BOOL)flag
 {
 }
+
 -(void)audioRecorderEncodeErrorDidOccur:
 (AVAudioRecorder *)recorder
                                   error:(NSError *)error

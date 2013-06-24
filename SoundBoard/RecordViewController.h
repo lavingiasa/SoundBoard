@@ -25,7 +25,7 @@
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
     }
-
+//names are pretter self explanatory
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
 @property (nonatomic, retain) IBOutlet UIButton *recordButton;
 @property (nonatomic, retain) IBOutlet UIButton *stopButton;

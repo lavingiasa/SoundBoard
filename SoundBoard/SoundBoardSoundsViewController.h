@@ -20,7 +20,7 @@
 
 
     }
-
+//names are pretty self explanitory
 @property (nonatomic, strong) SoundBoardGroup *board;
 @property (nonatomic, strong) AVAudioPlayer* theAudio;
 @property (nonatomic, strong) UIImage * imageFromCamera;
